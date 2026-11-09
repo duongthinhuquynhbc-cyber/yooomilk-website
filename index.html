@@ -181,5 +181,55 @@
   </aside>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="js/main.js"></script>
+  <div class="payment-modal" id="paymentModal" aria-hidden="true">
+    <div class="payment-box">
+      <button type="button" class="payment-close" id="paymentClose">×</button>
+
+      <span class="eyebrow">YOOOMILK CHECKOUT</span>
+      <h2>Hoàn tất đơn hàng</h2>
+      <p class="payment-intro">Vui lòng cung cấp thông tin nhận hàng.</p>
+
+      <form id="paymentForm">
+        <label>Họ và tên
+          <input name="customerName" required placeholder="Nhập họ và tên">
+        </label>
+
+        <label>Số điện thoại
+          <input name="phone" type="tel" required pattern="[0-9]{10,11}" placeholder="Nhập số điện thoại">
+        </label>
+
+        <label>Địa chỉ nhận hàng
+          <textarea name="address" required rows="2" placeholder="Số nhà, đường, phường/xã, tỉnh/thành phố"></textarea>
+        </label>
+
+        <h3>Phương thức thanh toán</h3>
+
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="Thanh toán khi nhận hàng (COD)" checked>
+          <span>Thanh toán khi nhận hàng (COD)</span>
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="Chuyển khoản QR (mô phỏng)">
+          <span>Chuyển khoản ngân hàng qua QR (mô phỏng)</span>
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="Ví điện tử (mô phỏng)">
+          <span>Ví điện tử (mô phỏng)</span>
+        </label>
+
+        <div class="payment-demo-note">
+          Đây là website mô phỏng. Các phương thức thanh toán điện tử chưa thực hiện giao dịch thật.
+        </div>
+
+        <div id="paymentTotal" class="payment-total"></div>
+
+        <button type="submit" class="btn btn-primary payment-submit">
+          Xác nhận đặt hàng
+        </button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
