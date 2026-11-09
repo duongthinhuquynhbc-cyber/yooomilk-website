@@ -28,3 +28,153 @@
   .promo-decoration img{max-width:230px;max-height:230px}
   .story-image img{height:290px}
 }
+/* ===== YOOOMILK PAYMENT MODAL ===== */
+
+.payment-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 35, 60, 0.55);
+  padding: 20px;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-modal.open {
+  display: flex;
+}
+
+.payment-box {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  margin: auto;
+  box-shadow: 0 15px 50px rgba(0, 40, 90, 0.18);
+}
+
+.payment-box h2 {
+  color: #0756a5;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin: 12px 0 8px;
+}
+
+.payment-intro {
+  color: #71839a;
+  margin-bottom: 22px;
+}
+
+.payment-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  color: #0756a5;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.payment-box form > label:not(.payment-option) {
+  display: block;
+  margin-bottom: 16px;
+  color: #24415f;
+  font-weight: 600;
+}
+
+.payment-box input:not([type="radio"]),
+.payment-box textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+  padding: 13px 14px;
+  border: 1px solid #dce7f2;
+  border-radius: 10px;
+  font: inherit;
+  color: #24415f;
+  background: #f9fcff;
+  outline: none;
+}
+
+.payment-box input:focus,
+.payment-box textarea:focus {
+  border-color: #0879d8;
+}
+
+.payment-box h3 {
+  color: #0756a5;
+  font-size: 17px;
+  margin: 24px 0 12px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #dce7f2;
+  border-radius: 12px;
+  color: #24415f;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.payment-option:has(input:checked) {
+  border-color: #0879d8;
+  background: #f0f8ff;
+}
+
+.payment-option input {
+  accent-color: #0879d8;
+  width: 17px;
+  height: 17px;
+}
+
+.payment-demo-note {
+  padding: 12px;
+  margin: 18px 0;
+  border-radius: 10px;
+  background: #f0f7ff;
+  color: #52718e;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.payment-total {
+  padding: 16px 0;
+  margin-top: 12px;
+  border-top: 1px solid #e4edf5;
+  color: #0756a5;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.payment-submit {
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .payment-modal {
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .payment-box {
+    padding: 25px 20px;
+    margin: 15px auto;
+    border-radius: 16px;
+  }
+
+  .payment-box h2 {
+    font-size: 25px;
+  }
+}
