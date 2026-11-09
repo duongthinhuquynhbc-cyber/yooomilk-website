@@ -151,28 +151,100 @@ $("#cartItems").addEventListener("click",e=>{
 
   if(e.target.id==="continueShopping") closeCart();
 });
+// ===== YOOOMILK PAYMENT SYSTEM =====
 
-$("#checkoutBtn").addEventListener("click",()=>{
-  if(!countCart()) {
+const paymentModal = $("#paymentModal");
+const paymentForm = $("#paymentForm");
+
+function calculateTotal() {
+  return Object.entries(cart).reduce((total, [id, quantity]) => {
+    return total + (PRODUCTS[id] ? PRODUCTS[id].price * quantity : 0);
+  }, 0);
+}
+
+function openPayment() {
+  if (!countCart()) {
     toast("Bạn chưa chọn sản phẩm nào.");
     return;
   }
 
-  const items=Object.entries(cart).filter(([id,q])=>PRODUCTS[id] && q>0);
+  $("#paymentTotal").textContent =
+    "Tổng thanh toán: " + money(calculateTotal());
 
-  const lines=items.map(([id,q])=>{
-    const p=PRODUCTS[id];
-    return `${p.name} (${p.size}) x ${q} = ${money(p.price*q)}`;
-  }).join("\n");
+  paymentModal.classList.add("open");
+  paymentModal.setAttribute("aria-hidden", "false");
+}
 
-  const total=items.reduce((sum,[id,q])=>sum+PRODUCTS[id].price*q,0);
+function closePayment() {
+  paymentModal.classList.remove("open");
+  paymentModal.setAttribute("aria-hidden", "true");
+}
 
-  const summary=
-    `YÊU CẦU ĐẶT HÀNG YOOOMILK\n${lines}\nTỔNG CỘNG: ${money(total)}\nPhí giao hàng: Chưa bao gồm.`;
+$("#checkoutBtn").addEventListener("click", openPayment);
 
-  navigator.clipboard?.writeText(summary)
-    .then(()=>toast("Đã sao chép nội dung đơn hàng. Bạn có thể gửi cho YoooMILK."))
-    .catch(()=>toast(summary));
+$("#paymentClose").addEventListener("click", closePayment);
+
+paymentModal.addEventListener("click", e => {
+  if (e.target === paymentModal) closePayment();
+});
+
+paymentForm.addEventListener("submit", e => {
+  e.preventDefault();
+
+  if (!countCart()) {
+    toast("Giỏ hàng đang trống.");
+    closePayment();
+    return;
+  }
+
+  const data = new FormData(paymentForm);
+
+  const name = data.get("customerName");
+  const phone = data.get("phone");
+  const address = data.get("address");
+  const method = data.get("paymentMethod");
+
+  const orderLines = Object.entries(cart)
+    .filter(([id, quantity]) => PRODUCTS[id] && quantity > 0)
+    .map(([id, quantity]) => {
+      const product = PRODUCTS[id];
+      return `${product.name} (${product.size}) x ${quantity}: ${money(product.price * quantity)}`;
+    })
+    .join("\n");
+
+  const total = calculateTotal();
+
+  const orderCode = "YM" + Date.now().toString().slice(-8);
+
+  const orderSummary =
+    `ĐƠN HÀNG YOOOMILK\n` +
+    `Mã đơn: ${orderCode}\n` +
+    `Khách hàng: ${name}\n` +
+    `Số điện thoại: ${phone}\n` +
+    `Địa chỉ: ${address}\n\n` +
+    `CHI TIẾT SẢN PHẨM\n${orderLines}\n\n` +
+    `Tổng thanh toán: ${money(total)}\n` +
+    `Phương thức: ${method}\n` +
+    `Trạng thái: Đơn hàng mô phỏng - chưa thanh toán.`;
+
+  alert(
+    "ĐẶT HÀNG THÀNH CÔNG!\n\n" +
+    "Mã đơn hàng: " + orderCode +
+    "\nTổng tiền: " + money(total) +
+    "\nPhương thức: " + method +
+    "\n\nCảm ơn bạn đã lựa chọn YoooMILK!"
+  );
+
+  // Sao chép thông tin đơn hàng nếu trình duyệt hỗ trợ
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(orderSummary).catch(() => {});
+  }
+
+  cart = {};
+  saveCart();
+  paymentForm.reset();
+  closePayment();
+  closeCart();
 });
 
 $$(".filter-btn").forEach(btn=>btn.addEventListener("click",()=>{
