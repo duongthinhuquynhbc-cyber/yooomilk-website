@@ -1,36 +1,35 @@
-
 const PRODUCTS = {
   "goat-original": {
     name: "Sữa dê tươi nguyên chất",
-    image: "assets/goat-milk.svg",
+    image: "https://caobahung001.github.io/Yooomilkweb/images/nguyenchat.png",
     category: "Sữa dê tươi",
     size: "1L",
     price: 69000
   },
   "goat-low": {
     name: "Sữa dê tươi ít đường",
-    image: "assets/goat-milk.svg",
+    image: "https://caobahung001.github.io/Yooomilkweb/images/itduong.png",
     category: "Sữa dê tươi",
     size: "1L",
     price: 72000
   },
   "goat-organic": {
     name: "Sữa dê Organic",
-    image: "assets/goat-milk.svg",
+    image: "https://caobahung001.github.io/Yooomilkweb/images/organic.png",
     category: "Sữa dê tươi",
     size: "1L",
     price: 79000
   },
   "almond": {
     name: "Sữa hạt hạnh nhân",
-    image: "assets/nut-milk.svg",
+    image: "https://caobahung001.github.io/Yooomilkweb/images/hanhnhan.png",
     category: "Sữa hạt",
     size: "1L",
     price: 59000
   },
   "yogurt": {
     name: "Sữa chua YoooMILK",
-    image: "assets/yogurt.svg",
+    image: "https://caobahung001.github.io/Yooomilkweb/images/suachua.png",
     category: "Sữa chua",
     size: "Lốc 4 hộp × 100g",
     price: 49000
