@@ -171,17 +171,27 @@ function renderCart() {
 }
 
 function openCart() {
-  $("#cartDrawer").classList.add("open");
+  const drawer = $("#cartDrawer");
+
+  drawer.removeAttribute("inert");
+  drawer.setAttribute("aria-hidden", "false");
+
+  drawer.classList.add("open");
   $("#overlay").classList.add("show");
 
-  $("#cartDrawer").setAttribute("aria-hidden", "false");
+  $("#cartClose").focus();
 }
 
 function closeCart() {
-  $("#cartDrawer").classList.remove("open");
+  const drawer = $("#cartDrawer");
+
+  drawer.classList.remove("open");
   $("#overlay").classList.remove("show");
 
-  $("#cartDrawer").setAttribute("aria-hidden", "true");
+  drawer.setAttribute("aria-hidden", "true");
+  drawer.setAttribute("inert", "");
+
+  $("#cartOpen").focus();
 }
 
 // Add product to cart
