@@ -279,3 +279,9 @@
 .add-btn:hover {
   color: #ffffff;
 }
+
+/* Fix Accessibility - Story Stamp Contrast */
+.story-stamp {
+  color: #064b9b;
+  background: #ffffff;
+}
