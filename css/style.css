@@ -178,3 +178,104 @@
     font-size: 25px;
   }
 }
+
+/* ===== ACCESSIBILITY: IMPROVE COLOR CONTRAST ===== */
+
+/* Màu chữ phụ */
+:root {
+  --muted: #4b6075;
+}
+
+/* Tiêu đề nhãn và nội dung phụ */
+.eyebrow {
+  color: #0756a5;
+}
+
+.hero-copy > p,
+.section-heading > p,
+.product-info p,
+.story-copy p,
+.contact-section > div > p {
+  color: #4b6075;
+}
+
+/* Ghi chú và chữ nhỏ */
+.hero-note small,
+.promise-strip small,
+.contact-form small,
+.category-card span {
+  color: #526866;
+}
+
+/* Nhãn sản phẩm */
+.product-label {
+  color: #0756a5;
+}
+
+/* Bộ lọc sản phẩm */
+.filter-btn {
+  color: #455b70;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  color: #ffffff;
+}
+
+/* Nhãn nổi trên hình ảnh */
+.tag-one {
+  color: #0756a5;
+}
+
+.tag-two {
+  color: #49654b;
+}
+
+/* Các nút màu xanh */
+.btn-primary {
+  background: #0756a5;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #064b9b;
+}
+
+/* Chữ trong phần giá trị thương hiệu */
+.values span {
+  color: #0756a5;
+}
+
+.values p {
+  color: #4b6075;
+}
+
+/* Chữ trong biểu mẫu liên hệ */
+.contact-form label {
+  color: #40596f;
+}
+
+.contact-form small {
+  color: #526866;
+}
+
+/* Chữ trong các thành phần phụ */
+.story-copy blockquote {
+  color: #0756a5;
+}
+
+.text-link {
+  color: #064b9b;
+}
+
+.category-card b {
+  color: #0756a5;
+}
+
+.add-btn {
+  color: #0756a5;
+}
+
+.add-btn:hover {
+  color: #ffffff;
+}
