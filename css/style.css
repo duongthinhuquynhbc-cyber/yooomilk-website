@@ -285,3 +285,9 @@
   color: #064b9b;
   background: #ffffff;
 }
+/* FIX CONTRAST - YOOOMILK STORY STAMP */
+.story-stamp {
+  color: #064b9b !important;
+  background-color: #ffffff !important;
+  text-shadow: none !important;
+}
