@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://caobahung001.github.io/Yooomilkweb/sitemap.xml
