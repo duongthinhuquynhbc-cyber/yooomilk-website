@@ -1,0 +1,336 @@
+
+/* =========================================
+   YoooMILK - BRAND STORY PAGE
+   ========================================= */
+
+.story-page {
+  --story-blue: #0755ad;
+  --story-bright: #0879d8;
+  --story-muted: #687d91;
+  --story-line: #dce9f5;
+  color: var(--story-blue);
+  overflow: hidden;
+}
+
+.story-page * {
+  box-sizing: border-box;
+}
+
+.story-kicker {
+  display: inline-block;
+  color: var(--story-bright);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  margin-bottom: 18px;
+}
+
+.story-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 8%;
+  padding: 85px max(8vw, 30px);
+  background: #fff;
+}
+
+.story-intro-visual {
+  position: relative;
+  min-height: 440px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #eaf5ff, #f0f7ee);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.story-intro-visual img {
+  display: block;
+  width: 75%;
+  height: 390px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+}
+
+.story-roundel {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: white;
+  color: var(--story-blue);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.1;
+  text-align: center;
+  transform: rotate(-10deg);
+  box-shadow: 0 8px 25px rgba(5,72,145,.08);
+}
+
+.story-image-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 28px;
+  color: #64849b;
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+
+.story-intro-copy {
+  max-width: 550px;
+}
+
+.story-intro-copy h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.03;
+  letter-spacing: -2px;
+  color: var(--story-blue);
+  margin: 0 0 25px;
+}
+
+.story-intro-copy h1 em {
+  color: var(--story-bright);
+  font-weight: 600;
+}
+
+.story-intro-copy p,
+.story-manifesto p,
+.story-closing p {
+  color: var(--story-muted);
+  font-size: 13px;
+  line-height: 2;
+  margin: 0 0 17px;
+}
+
+.story-intro-copy blockquote {
+  margin: 30px 0;
+  color: var(--story-bright);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.story-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--story-blue);
+  border-bottom: 1px solid #a9c8df;
+  padding-bottom: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.story-text-link:hover {
+  color: var(--story-bright);
+  border-color: var(--story-bright);
+}
+
+.story-manifesto {
+  padding: 85px max(12vw, 30px);
+  background: #f0f7ff;
+  text-align: center;
+}
+
+.story-manifesto h2,
+.story-section-heading h2,
+.story-closing h2 {
+  color: var(--story-blue);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 4vw, 49px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 0 0 22px;
+}
+
+.story-manifesto h2 em,
+.story-section-heading h2 em,
+.story-closing h2 em {
+  color: var(--story-bright);
+}
+
+.story-manifesto p {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.story-values-section {
+  padding: 95px max(8vw, 30px);
+  background: #fff;
+}
+
+.story-section-heading {
+  margin-bottom: 38px;
+}
+
+.story-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.story-value-card {
+  min-height: 260px;
+  padding: 28px;
+  border: 1px solid #e5edf4;
+  border-radius: 12px;
+  background: #fbfdff;
+  transition: .25s;
+}
+
+.story-value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(5,72,145,.08);
+}
+
+.story-value-card > span {
+  color: var(--story-bright);
+  font-size: 11px;
+  letter-spacing: .15em;
+}
+
+.story-value-icon {
+  width: 44px;
+  height: 44px;
+  margin: 22px 0 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eaf5ff;
+  color: var(--story-bright);
+  font-size: 22px;
+}
+
+.story-value-card h3 {
+  color: var(--story-blue);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  margin: 0 0 10px;
+}
+
+.story-value-card p {
+  color: var(--story-muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.story-closing {
+  margin: 0 max(5vw, 20px) 45px;
+  padding: 55px 8%;
+  border-radius: 14px;
+  background: linear-gradient(110deg, #0755ad, #0879d8);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.story-closing .story-kicker {
+  color: #cce7ff;
+}
+
+.story-closing h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.story-closing h2 em {
+  color: #d8ecff;
+}
+
+.story-closing p {
+  max-width: 450px;
+  color: #e0efff;
+}
+
+.story-closing-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 15px 22px;
+  background: white;
+  color: var(--story-blue);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.story-closing-button:hover {
+  transform: translateY(-3px);
+  background: #eaf5ff;
+}
+
+@media (max-width: 800px) {
+  .story-intro {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 50px 6%;
+  }
+
+  .story-intro-visual {
+    min-height: 350px;
+  }
+
+  .story-intro-visual img {
+    height: 310px;
+  }
+
+  .story-values-section {
+    padding: 60px 6%;
+  }
+
+  .story-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-value-card {
+    min-height: auto;
+  }
+
+  .story-closing {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 38px 7%;
+  }
+
+  .story-manifesto {
+    padding: 60px 7%;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-intro-copy h1 {
+    font-size: 42px;
+  }
+
+  .story-intro-visual {
+    min-height: 300px;
+  }
+
+  .story-intro-visual img {
+    height: 270px;
+  }
+
+  .story-image-caption {
+    display: none;
+  }
+
+  .story-closing {
+    margin: 0 15px 30px;
+  }
+}
