@@ -34,4 +34,3 @@ Mở `index.html` bằng trình duyệt hoặc dùng Live Server trong VS Code.
 - Đã chuyển màu nhận diện sang xanh dương sữa và xanh lá, giữ nguyên bố cục và cấu trúc trang.
 - Đã thay hình minh họa ở banner, danh mục, thẻ sản phẩm, khuyến mãi và câu chuyện thương hiệu bằng ảnh sản phẩm trên website YoooMILK tham chiếu.
 - Ảnh đang được gọi từ website tham chiếu qua URL công khai; nếu website nguồn đổi đường dẫn hoặc gỡ ảnh thì ảnh ở bản này có thể không hiển thị.
-

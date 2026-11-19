@@ -40,6 +40,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail.css">
 
   <!-- Schema: Organization -->
   <script type="application/ld+json">
@@ -86,8 +87,9 @@
     <nav class="main-nav" id="mainNav">
       <a href="#home">Trang chủ</a>
       <a href="#products">Sản phẩm</a>
+        
       <a href="#promotion">Khuyến mãi</a>
-      <a href="#story">Câu chuyện YoooMILK</a>
+      <a href="story.html">Câu chuyện YoooMILK</a>
       <a href="#contact">Liên hệ</a>
     </nav>
 
@@ -115,7 +117,7 @@
 
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#products">Khám phá sản phẩm <span>↗</span></a>
-          <a class="text-link" href="#story">Tìm hiểu YoooMILK</a>
+          <a class="text-link" href="story.html">Tìm hiểu YoooMILK</a>
         </div>
 
         <div class="hero-note">
@@ -226,17 +228,17 @@
 
       <div class="product-grid" id="productGrid">
 
-        <article class="product-card" data-category="goat" data-name="sữa dê tươi nguyên chất">
+        <article class="product-card" data-product-id="goat-original" data-category="goat" data-name="sữa dê tươi nguyên chất">
           <div class="product-image">
-            <span class="product-label">SỮA DÊ TƯƠI</span>
-            <img
+            
+            <a class="product-detail-link" href="product.html?id=goat-original" aria-label="Xem chi tiết Sữa dê tươi nguyên chất YoooMILK dung tích 1 lít"><img
               src="assets/sua-de-nguyen-chat.png"
               alt="Sữa dê tươi nguyên chất YoooMILK dung tích 1 lít"
-              loading="lazy">
+              loading="lazy"></a>
           </div>
           <div class="product-info">
             <div>
-              <h3>Sữa dê tươi nguyên chất 1L</h3>
+              <h3><a class="product-title-link" href="product.html?id=goat-original">Sữa dê tươi nguyên chất 1L</a></h3>
               <p>Sữa dê tươi nguyên chất YoooMILK 1L dành cho những ai yêu thích hương vị sữa dê tự nhiên. Với dung tích tiện lợi, sản phẩm phù hợp để sử dụng trong thực đơn hằng ngày của cá nhân và gia đình.</p>
             </div>
             <div class="product-bottom">
@@ -246,17 +248,17 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="goat" data-name="sữa dê tươi ít đường">
+        <article class="product-card" data-product-id="goat-low" data-category="goat" data-name="sữa dê tươi ít đường">
           <div class="product-image">
-            <span class="product-label">ÍT ĐƯỜNG</span>
-            <img
+            
+            <a class="product-detail-link" href="product.html?id=goat-low" aria-label="Xem chi tiết Sữa dê tươi ít đường YoooMILK dung tích 1 lít"><img
               src="assets/sua-de-it-duong.png"
               alt="Sữa dê tươi ít đường YoooMILK dung tích 1 lít"
-              loading="lazy">
+              loading="lazy"></a>
           </div>
           <div class="product-info">
             <div>
-              <h3>Sữa dê tươi ít đường 1L</h3>
+              <h3><a class="product-title-link" href="product.html?id=goat-low">Sữa dê tươi ít đường 1L</a></h3>
               <p>Sữa dê tươi ít đường YoooMILK 1L là lựa chọn dành cho những khách hàng yêu thích sữa dê nhưng muốn giảm độ ngọt khi thưởng thức. Hương vị dịu nhẹ, dễ uống, phù hợp để bổ sung vào thói quen dinh dưỡng mỗi ngày.</p>
             </div>
             <div class="product-bottom">
@@ -266,17 +268,17 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="goat" data-name="sữa dê organic">
+        <article class="product-card" data-product-id="goat-organic" data-category="goat" data-name="sữa dê organic">
           <div class="product-image">
-            <span class="product-label">ORGANIC</span>
-            <img
+            
+            <a class="product-detail-link" href="product.html?id=goat-organic" aria-label="Xem chi tiết Sữa dê Organic YoooMILK dung tích 1 lít"><img
               src="assets/sua-de-organic.png"
               alt="Sữa dê Organic YoooMILK dung tích 1 lít"
-              loading="lazy">
+              loading="lazy"></a>
           </div>
           <div class="product-info">
             <div>
-              <h3>Sữa dê Organic 1L</h3>
+              <h3><a class="product-title-link" href="product.html?id=goat-organic">Sữa dê Organic 1L</a></h3>
               <p>Sữa dê Organic YoooMILK 1L dành cho những khách hàng quan tâm đến các sản phẩm thuộc dòng sữa dê hữu cơ. Sản phẩm mang đến thêm một lựa chọn cho những ai yêu thích sữa dê và mong muốn đa dạng hóa thực đơn hằng ngày.</p>
             </div>
             <div class="product-bottom">
@@ -286,17 +288,17 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="nut" data-name="sữa hạt hạnh nhân">
+        <article class="product-card" data-product-id="almond" data-category="nut" data-name="sữa hạt hạnh nhân">
           <div class="product-image">
             <span class="product-label">TỪ HẠT</span>
-            <img
+            <a class="product-detail-link" href="product.html?id=almond" aria-label="Xem chi tiết Sữa hạt hạnh nhân YoooMILK dung tích 1 lít"><img
               src="assets/sua-hat-hanh-nhan.png"
               alt="Sữa hạt hạnh nhân YoooMILK dung tích 1 lít"
-              loading="lazy">
+              loading="lazy"></a>
           </div>
           <div class="product-info">
             <div>
-              <h3>Sữa hạt hạnh nhân 1L</h3>
+              <h3><a class="product-title-link" href="product.html?id=almond">Sữa hạt hạnh nhân 1L</a></h3>
               <p>Sữa hạt hạnh nhân YoooMILK 1L là lựa chọn thơm ngon dành cho những ai yêu thích thức uống từ thực vật. Hương vị hạnh nhân đặc trưng cùng dung tích 1L tiện lợi, phù hợp để thưởng thức tại nhà hoặc trong những giờ nghỉ giữa ngày.</p>
             </div>
             <div class="product-bottom">
@@ -306,17 +308,17 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="yogurt" data-name="sữa chua yooomilk">
+        <article class="product-card" data-product-id="yogurt" data-category="yogurt" data-name="sữa chua yooomilk">
           <div class="product-image">
             <span class="product-label">MỀM MỊN</span>
-            <img
+            <a class="product-detail-link" href="product.html?id=yogurt" aria-label="Xem chi tiết Sữa chua YoooMILK lốc 4 hộp"><img
               src="assets/sua-chua-yooomilk.png"
               alt="Sữa chua YoooMILK lốc 4 hộp"
-              loading="lazy">
+              loading="lazy"></a>
           </div>
           <div class="product-info">
             <div>
-              <h3>Sữa chua YoooMILK lốc 4 hộp</h3>
+              <h3><a class="product-title-link" href="product.html?id=yogurt">Sữa chua YoooMILK lốc 4 hộp</a></h3>
               <p>Sữa chua YoooMILK lốc 4 hộp với kết cấu mềm mịn và hương vị thơm ngon, thích hợp làm món ăn nhẹ trong ngày. Quy cách đóng lốc tiện lợi giúp bạn dễ dàng bảo quản và thưởng thức cùng gia đình.</p>
             </div>
             <div class="product-bottom">
@@ -342,7 +344,7 @@
 
       <div class="promo-decoration">
         <img
-          src="assets/sua-de-it-duong.png"
+          src="assets/promo-goat-low.png"
           alt="Sản phẩm sữa dê tươi ít đường YoooMILK"
           loading="lazy">
       </div>
@@ -363,7 +365,7 @@
         <p>YoooMILK là thương hiệu giới thiệu và kinh doanh các sản phẩm sữa dê tươi, sữa dê nguyên chất, sữa dê ít đường, sữa dê Organic, sữa hạt hạnh nhân và sữa chua thông qua nền tảng trực tuyến.</p>
         <p>Website YoooMILK được xây dựng nhằm giúp khách hàng dễ dàng tìm kiếm sản phẩm sữa, tham khảo thông tin, dung tích và giá bán. Với danh mục sản phẩm đa dạng, khách hàng có thể tìm hiểu từng dòng sản phẩm và lựa chọn theo nhu cầu sử dụng.</p>
         <blockquote>“Một giọt tươi – Một ngày lành”</blockquote>
-        <a class="text-link" href="#products">Tìm sản phẩm phù hợp <span>↗</span></a>
+        <a class="text-link" href="story.html">Tìm hiểu thêm về câu chuyện YoooMILK <span>↗</span></a>
       </div>
     </section>
 
@@ -433,8 +435,9 @@
       <div>
         <h3>Khám phá</h3>
         <a href="#products">Sản phẩm</a>
+        
         <a href="#promotion">Khuyến mãi</a>
-        <a href="#story">Câu chuyện YoooMILK</a>
+        <a href="story.html">Câu chuyện YoooMILK</a>
       </div>
 
       <div>
