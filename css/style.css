@@ -474,3 +474,163 @@
     max-height: 190px !important;
   }
 }
+
+/* =====================================
+   YOOOMILK - BRAND VALUES SECTION
+===================================== */
+
+.brand-values-section {
+    padding: 85px 0 95px;
+    max-width: 1440px;
+    width: calc(100% - 42px);
+    margin: 0 auto;
+}
+
+.brand-values-heading {
+    display: grid;
+    grid-template-columns: 1fr 0.55fr;
+    column-gap: 70px;
+    align-items: end;
+    margin-bottom: 38px;
+}
+
+.brand-values-heading .section-eyebrow {
+    grid-column: 1 / -1;
+    color: #0879d8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    margin-bottom: 17px;
+}
+
+.brand-values-heading h2 {
+    margin: 0;
+    color: #0755ad;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.brand-values-heading h2 em {
+    color: #0879d8;
+    font-weight: 500;
+}
+
+.brand-values-intro {
+    color: #647b91;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0 0 5px;
+}
+
+.brand-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.brand-value-card {
+    background: #fbfdff;
+    border: 1px solid #e3edf7;
+    border-radius: 12px;
+    padding: 30px 26px 32px;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.brand-value-card:hover {
+    transform: translateY(-6px);
+    border-color: #b8d9f8;
+    box-shadow: 0 15px 35px rgba(5, 85, 173, 0.09);
+}
+
+.value-number {
+    color: #0879d8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 23px;
+}
+
+.value-icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eaf4ff;
+    color: #0879d8;
+    border-radius: 50%;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.brand-value-card h3 {
+    color: #0755ad;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 15px;
+}
+
+.brand-value-card p {
+    color: #647b91;
+    font-size: 13px;
+    line-height: 1.95;
+    margin: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .brand-values-heading {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .brand-values-intro {
+        max-width: 650px;
+    }
+
+    .brand-values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .brand-values-section {
+        width: calc(100% - 32px);
+        padding: 55px 0 65px;
+    }
+
+    .brand-values-heading h2 {
+        font-size: 36px;
+    }
+
+    .brand-values-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .brand-value-card {
+        min-height: auto;
+        padding: 25px 22px;
+    }
+
+    .brand-value-card h3 {
+        font-size: 20px;
+    }
+
+    .brand-value-card p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+}
