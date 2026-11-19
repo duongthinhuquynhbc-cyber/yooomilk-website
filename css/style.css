@@ -302,3 +302,175 @@
   text-shadow: none !important;
   opacity: 1 !important;
 }
+
+/* ===== PRODUCT GRID VISUAL CONSISTENCY ===== */
+.products-grid{align-items:stretch}
+.product-card{height:100%;display:flex;flex-direction:column;border:1px solid #e8edf2;border-radius:14px;box-shadow:0 5px 22px rgba(22,73,117,.045)}
+.product-image{height:280px;min-height:280px;background:#f1f7fc!important;padding:14px;box-sizing:border-box}
+.product-card:nth-child(3n+2) .product-image{background:#f1f7f1!important}
+.product-card:nth-child(3n) .product-image{background:#f5f7f1!important}
+.product-detail-link{display:grid;place-items:center;width:100%;height:100%;padding:0}
+.product-image img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;transform:none!important}
+.product-card:hover .product-image img{transform:scale(1.025)!important}
+.product-info{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:22px}
+.product-info h3{line-height:1.35;min-height:48px}
+.product-info p{font-size:12px;line-height:1.75;min-height:84px;color:#718091}
+.product-bottom{margin-top:18px;align-items:center;gap:12px}
+.product-bottom>b{white-space:nowrap;color:#0757a5}
+.add-btn{white-space:nowrap;border-radius:8px;padding:11px 14px}
+@media(max-width:700px){.product-image{height:235px;min-height:235px}.product-info{padding:17px}.product-info p{min-height:0}}
+
+/* Final product packshots from the approved YoooMILK visual */
+.product-image img{width:100%;height:100%;object-fit:contain;object-position:center}
+.product-detail-link{overflow:hidden}
+.product-card .product-image{background:#eef6fb}
+.product-card:nth-child(3n+2) .product-image{background:#eaf5fc}
+.product-card:nth-child(3n) .product-image{background:#edf5e8}
+
+/* Final approved YoooMILK product visuals */
+.product-image{height:280px;min-height:280px;overflow:hidden;background:#f1f7fc!important;padding:0!important}
+.product-image .product-detail-link{display:block;width:100%;height:100%}
+.product-image img{display:block;width:100%;height:100%;padding:0!important;object-fit:cover!important;object-position:center!important;filter:none!important}
+.product-card:nth-child(2) .product-image{background:#eaf5fc!important}
+.product-card:nth-child(3) .product-image{background:#edf5e8!important}
+.promo-decoration{background:#eaf4ff;border-radius:18px;width:min(100%,340px);height:340px;padding:18px;overflow:hidden;display:grid;place-items:center}
+.promo-decoration img{width:100%!important;height:100%;max-height:none!important;object-fit:contain!important;filter:none!important;border-radius:12px}
+@media(max-width:760px){.product-image{height:230px;min-height:230px}.promo-decoration{height:270px;width:min(100%,280px)}}
+
+/* Transparent YoooMILK carton cutouts: preserve the complete package silhouette. */
+.hero-art>img{object-fit:contain;background:transparent;max-height:460px}
+.category-art img{object-fit:contain;background:transparent;padding:8px}
+.product-image img{object-fit:contain;background:transparent;max-width:100%;max-height:100%}
+.promo-decoration img{object-fit:contain;background:transparent;max-height:360px}
+.story-image img{object-fit:contain;background:transparent;max-width:100%;max-height:390px}
+
+/* 2026-11-20: pull back product packshots so every package is fully visible */
+.category-art{
+  width:44% !important;
+  height:210px !important;
+  flex:0 0 44%;
+  display:grid !important;
+  place-items:center !important;
+  overflow:visible !important;
+}
+.category-art img{
+  display:block !important;
+  width:78% !important;
+  height:82% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  padding:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  transform:none !important;
+}
+.product-image{
+  height:280px !important;
+  min-height:280px !important;
+  padding:14px !important;
+  display:grid !important;
+  place-items:center !important;
+}
+.product-image .product-detail-link{
+  display:grid !important;
+  width:100% !important;
+  height:100% !important;
+  place-items:center !important;
+  overflow:visible !important;
+}
+.product-image img{
+  display:block !important;
+  width:82% !important;
+  height:84% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  padding:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  transform:none !important;
+  filter:none !important;
+}
+.product-card:hover .product-image img{
+  transform:scale(1.015) !important;
+}
+.promo-decoration{
+  width:min(100%,340px) !important;
+  height:340px !important;
+  padding:12px !important;
+  overflow:visible !important;
+  display:grid !important;
+  place-items:center !important;
+}
+.promo-decoration img{
+  display:block !important;
+  width:auto !important;
+  height:82% !important;
+  max-width:82% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  border-radius:0 !important;
+  transform:none !important;
+}
+@media(max-width:760px){
+  .category-art{height:165px !important;width:42% !important;flex-basis:42%}
+  .category-art img{width:82% !important;height:82% !important}
+  .product-image{height:235px !important;min-height:235px !important;padding:10px !important}
+  .product-image img{width:84% !important;height:84% !important}
+  .promo-decoration{height:270px !important;width:min(100%,280px) !important}
+  .promo-decoration img{height:82% !important;max-width:82% !important}
+}
+
+
+
+/* FINAL FIX — promotion product must stay fully inside its image panel.
+   Use a bounded image box so a tall transparent PNG cannot overflow the blue banner. */
+.promo {
+  overflow: hidden !important;
+}
+.promo-decoration {
+  box-sizing: border-box !important;
+  position: relative !important;
+  width: min(100%, 340px) !important;
+  height: 300px !important;
+  min-height: 0 !important;
+  padding: 16px !important;
+  overflow: hidden !important;
+  display: grid !important;
+  place-items: center !important;
+  align-self: center !important;
+  justify-self: center !important;
+  border-radius: 18px !important;
+  background: #eaf4ff !important;
+}
+.promo-decoration img {
+  display: block !important;
+  position: relative !important;
+  inset: auto !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 76% !important;
+  max-height: 228px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  filter: none !important;
+}
+@media (max-width: 760px) {
+  .promo {
+    overflow: hidden !important;
+  }
+  .promo-decoration {
+    width: min(100%, 280px) !important;
+    height: 240px !important;
+    margin: 8px auto 0 !important;
+    padding: 12px !important;
+  }
+  .promo-decoration img {
+    max-width: 76% !important;
+    max-height: 190px !important;
+  }
+}
