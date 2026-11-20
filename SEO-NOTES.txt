@@ -1,9 +1,23 @@
-SEO ON-SITE - CAC CAP NHAT
+SEO ON-SITE – BAN CAP NHAT DONG BO
 
-1. index.html: bo sung Open Graph, Twitter Card va WebSite JSON-LD.
-2. story.html: title, meta description, canonical va Open Graph rieng.
-3. product.html + js/product-detail.js: metadata va canonical duoc cap nhat theo id san pham; bo sung Product JSON-LD theo du lieu san pham hien co.
-4. sitemap.xml: khai bao trang chu, trang cau chuyen va 5 URL chi tiet san pham co tham so id.
-5. robots.txt giu Allow: / va khai bao sitemap.
+Da cap nhat:
+1. Trang chu: title, meta description, canonical thong nhat voi URL goc trong sitemap, Open Graph, Twitter Card, WebSite va Organization JSON-LD.
+2. Trang cau chuyen: title, meta description, canonical, Open Graph va Twitter Card rieng.
+3. Trang chi tiet san pham: JavaScript cap nhat title, meta description, canonical theo tung id; Open Graph/Twitter Card theo san pham; Product JSON-LD va BreadcrumbList JSON-LD.
+4. URL san pham khong hop le: dat noindex, follow.
+5. Hinh anh PNG da duoc chuyen sang WebP va cac tham chieu trong HTML/CSS/JS da duoc cap nhat; giu nguyen ten va noi dung cac trang.
+6. Hinh anh lazy-load duoc bo sung decoding async; cac hinh anh hien co deu co alt text.
+7. Sitemap giu 7 URL chinh; robots.txt khai bao sitemap va Allow: /.
 
-LUU Y: metadata cua product.html duoc cap nhat bang JavaScript. Google co the render JavaScript, nhung can kiem tra lai tung URL bang Google Search Console (URL Inspection) sau khi deploy. Du lieu structured Product khong tu dong dam bao hien thi rich result. Gia trong schema lay tu gia dang hien thi tren website; khong khai bao tinh trang ton kho/availability vi website chua co du lieu ton kho truc tuyen.
+Can kiem tra sau khi upload:
+- Mo trang chu, story va ca 5 URL product.html?id=... tren desktop/mobile.
+- Kiem tra menu, loc/tim kiem, gio hang, them san pham va nut mua ngay.
+- Dung Google Search Console URL Inspection de xem Google render duoc ten, mo ta va noi dung tung trang san pham.
+- Dung Rich Results Test de kiem tra Product structured data sau khi Google co the tai JavaScript.
+- Gui lai sitemap.xml neu Search Console van chua doc duoc sau khi deploy; khong gui URL GitHub /blob/main/.
+- Dung PageSpeed Insights de do lai Core Web Vitals.
+
+Luu y:
+- Metadata va Product JSON-LD tren trang product.html duoc tao bang JavaScript theo query parameter id. Google co the render JavaScript, nhung can kiem tra live sau khi deploy; khong the dam bao lap chi muc hoac rich results.
+- Website la GitHub Pages tinh, khong co backend. Khong bo sung tinh trang ton kho, danh gia, thong tin dinh duong, chung nhan hay cam ket giao dich chua duoc xac minh.
+- Gia schema la gia hien thi trong du lieu website tai thoi diem cap nhat; can cap nhat neu gia ban thay doi.
