@@ -1,7 +1,7 @@
 
 /* =========================================
    YoooMILK - PRODUCT DATABASE
-   5 SẢN PHẨM CHÍNH
+   WEBP FIRST + PNG FALLBACK
    ========================================= */
 
 const PRODUCTS_DATA = {
@@ -12,7 +12,9 @@ const PRODUCTS_DATA = {
     label: "SỮA DÊ TƯƠI",
     size: "1 lít",
     price: 69000,
-    image: "assets/product-goat-original.png",
+
+    image: "assets/product-goat-original.webp",
+    fallbackImage: "assets/product-goat-original.png",
 
     short:
       "Sữa dê tươi nguyên chất YoooMILK 1L dành cho những ai yêu thích hương vị sữa dê tự nhiên.",
@@ -54,7 +56,9 @@ const PRODUCTS_DATA = {
     label: "ÍT ĐƯỜNG",
     size: "1 lít",
     price: 72000,
-    image: "assets/product-goat-low-sugar.png",
+
+    image: "assets/product-goat-low-sugar.webp",
+    fallbackImage: "assets/product-goat-low-sugar.png",
 
     short:
       "Sữa dê tươi ít đường YoooMILK 1L là lựa chọn dành cho khách hàng yêu thích sữa dê nhưng muốn giảm độ ngọt khi thưởng thức.",
@@ -96,7 +100,9 @@ const PRODUCTS_DATA = {
     label: "ORGANIC",
     size: "1 lít",
     price: 79000,
-    image: "assets/product-goat-organic.png",
+
+    image: "assets/product-goat-organic.webp",
+    fallbackImage: "assets/product-goat-organic.png",
 
     short:
       "Sữa dê Organic YoooMILK 1L dành cho khách hàng quan tâm đến các sản phẩm thuộc dòng sữa dê hữu cơ.",
@@ -138,7 +144,9 @@ const PRODUCTS_DATA = {
     label: "TỪ HẠT",
     size: "1 lít",
     price: 59000,
-    image: "assets/sua-hat-hanh-nhan.png",
+
+    image: "assets/sua-hat-hanh-nhan.webp",
+    fallbackImage: "assets/sua-hat-hanh-nhan.png",
 
     short:
       "Sữa hạt hạnh nhân YoooMILK 1L là lựa chọn thơm ngon dành cho những ai yêu thích thức uống từ thực vật.",
@@ -180,7 +188,9 @@ const PRODUCTS_DATA = {
     label: "MỀM MỊN",
     size: "Lốc 4 hộp × 100g",
     price: 49000,
-    image: "assets/sua-chua-yooomilk.png",
+
+    image: "assets/sua-chua-yooomilk.webp",
+    fallbackImage: "assets/sua-chua-yooomilk.png",
 
     short:
       "Sữa chua YoooMILK lốc 4 hộp với kết cấu mềm mịn và hương vị thơm ngon, thích hợp làm món ăn nhẹ trong ngày.",
