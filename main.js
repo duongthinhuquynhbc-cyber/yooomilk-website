@@ -1,7 +1,7 @@
 const PRODUCTS = {
-  "goat-original": {name:"Sữa dê tươi nguyên chất", image:"assets/sua-de-nguyen-chat.webp", category:"Sữa dê tươi"},
-  "goat-low": {name:"Sữa dê tươi ít đường", image:"assets/sua-de-it-duong.webp", category:"Sữa dê tươi"},
-  "goat-organic": {name:"Sữa dê Organic", image:"assets/sua-de-organic.webp", category:"Sữa dê tươi"},
+  "goat-original": {name:"Sữa dê tươi nguyên chất", image:"assets/sua-de-nguyen-chat.png", category:"Sữa dê tươi"},
+  "goat-low": {name:"Sữa dê tươi ít đường", image:"assets/sua-de-it-duong.png", category:"Sữa dê tươi"},
+  "goat-organic": {name:"Sữa dê Organic", image:"assets/sua-de-organic.png", category:"Sữa dê tươi"},
   "almond": {name:"Sữa hạt hạnh nhân", image:"assets/nut-milk.svg", category:"Sữa hạt"},
   "yogurt": {name:"Sữa chua YoooMILK", image:"assets/yogurt.svg", category:"Sữa chua"}
 };
