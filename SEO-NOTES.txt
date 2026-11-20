@@ -1,0 +1,9 @@
+SEO ON-SITE - CAC CAP NHAT
+
+1. index.html: bo sung Open Graph, Twitter Card va WebSite JSON-LD.
+2. story.html: title, meta description, canonical va Open Graph rieng.
+3. product.html + js/product-detail.js: metadata va canonical duoc cap nhat theo id san pham; bo sung Product JSON-LD theo du lieu san pham hien co.
+4. sitemap.xml: khai bao trang chu, trang cau chuyen va 5 URL chi tiet san pham co tham so id.
+5. robots.txt giu Allow: / va khai bao sitemap.
+
+LUU Y: metadata cua product.html duoc cap nhat bang JavaScript. Google co the render JavaScript, nhung can kiem tra lai tung URL bang Google Search Console (URL Inspection) sau khi deploy. Du lieu structured Product khong tu dong dam bao hien thi rich result. Gia trong schema lay tu gia dang hien thi tren website; khong khai bao tinh trang ton kho/availability vi website chua co du lieu ton kho truc tuyen.
