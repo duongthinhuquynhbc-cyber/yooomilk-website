@@ -1,66 +1,44 @@
 
+/* =====================================================
+   YoooMILK - PRODUCT DETAIL
+   File: js/product-detail.js
+===================================================== */
+
 document.addEventListener("DOMContentLoaded", function () {
-  // ==========================================
-  // 1. LẤY DỮ LIỆU SẢN PHẨM
-  // ==========================================
 
-  const params = new URLSearchParams(window.location.search);
-  const productId = params.get("id") || "goat-original";
-
-  const product = typeof PRODUCTS_DATA !== "undefined"
-    ? PRODUCTS_DATA[productId]
-    : null;
+  /* ===================================================
+     1. CẤU HÌNH
+  =================================================== */
 
   const BASE_URL =
     "https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/";
 
-  const PRODUCT_URL = BASE_URL + "product.html?id=" + encodeURIComponent(productId);
+  const CART_KEY = "yoomilk-cart";
 
-  const fallbackImages = {
-    "goat-original": "assets/product-goat-original.webp",
-    "goat-low": "assets/product-goat-low-sugar.webp",
-    "goat-organic": "assets/product-goat-organic.webp",
-    "almond": "assets/sua-hat-hanh-nhan.webp",
-    "yogurt": "assets/sua-chua-yooomilk.webp"
-  };
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id") || "goat-original";
 
-  // ==========================================
-  // 2. KIỂM TRA SẢN PHẨM
-  // ==========================================
+  // Lấy dữ liệu từ products-data.js
+  const database = window.PRODUCTS_DATA || {};
+  const product = database[productId];
 
-  if (!product) {
-    const productName = document.getElementById("productName");
+  const PRODUCT_URL =
+    BASE_URL + "product.html?id=" + encodeURIComponent(productId);
 
-    if (productName) {
-      productName.textContent = "Không tìm thấy sản phẩm";
-    }
 
-    const shortText = document.getElementById("productShort");
+  /* ===================================================
+     2. HÀM HỖ TRỢ
+  =================================================== */
 
-    if (shortText) {
-      shortText.textContent =
-        "Sản phẩm bạn đang tìm kiếm hiện không tồn tại hoặc đường dẫn không hợp lệ.";
-    }
-
-    const price = document.getElementById("productPrice");
-
-    if (price) {
-      price.textContent = "";
-    }
-
-    document.title = "Không tìm thấy sản phẩm | YoooMILK";
-    return;
+  function getElement(id) {
+    return document.getElementById(id);
   }
 
-  // ==========================================
-  // 3. HÀM HỖ TRỢ
-  // ==========================================
-
   function setText(id, value) {
-    const element = document.getElementById(id);
+    const element = getElement(id);
 
     if (element) {
-      element.textContent = value || "";
+      element.textContent = value == null ? "" : value;
     }
   }
 
@@ -79,7 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setLink(rel, href) {
-    let element = document.querySelector(`link[rel="${rel}"]`);
+    let element = document.querySelector(
+      `link[rel="${rel}"]`
+    );
 
     if (!element) {
       element = document.createElement("link");
@@ -93,86 +73,104 @@ document.addEventListener("DOMContentLoaded", function () {
   function absoluteUrl(path) {
     if (!path) return "";
 
-    try {
-      return new URL(path, BASE_URL).href;
-    } catch (error) {
-      return BASE_URL + path;
-    }
-  }
-
-  function renderList(id, items) {
-    const element = document.getElementById(id);
-
-    if (!element) return;
-
-    element.replaceChildren();
-
-    const values = Array.isArray(items)
-      ? items
-      : items
-        ? [items]
-        : [];
-
-    values.forEach(function (item) {
-      const li = document.createElement("li");
-      li.textContent = item;
-      element.appendChild(li);
-    });
+    return new URL(path, BASE_URL).href;
   }
 
   function formatPrice(price) {
     return Number(price || 0).toLocaleString("vi-VN") + "₫";
   }
 
-  // ==========================================
-  // 4. TỐI ƯU SEO TITLE VÀ META DESCRIPTION
-  // ==========================================
+  function renderList(id, items) {
+    const element = getElement(id);
+
+    if (!element) return;
+
+    element.replaceChildren();
+
+    const list = Array.isArray(items)
+      ? items
+      : items
+        ? [items]
+        : [];
+
+    list.forEach(function (item) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      element.appendChild(li);
+    });
+  }
+
+
+  /* ===================================================
+     3. KIỂM TRA SẢN PHẨM
+  =================================================== */
+
+  if (!product) {
+    document.title = "Không tìm thấy sản phẩm | YoooMILK";
+
+    setText("productName", "Không tìm thấy sản phẩm");
+
+    setText(
+      "productShort",
+      "Sản phẩm bạn đang tìm kiếm hiện không tồn tại hoặc đường dẫn không hợp lệ."
+    );
+
+    setText("productPrice", "");
+    setText("productDescription", "");
+
+    console.error(
+      "YoooMILK: Không tìm thấy sản phẩm có ID:",
+      productId
+    );
+
+    return;
+  }
+
+
+  /* ===================================================
+     4. SEO TITLE VÀ META DESCRIPTION
+  =================================================== */
 
   const seoDescriptions = {
     "goat-original":
-      "Khám phá sữa dê tươi nguyên chất YoooMILK 1L với hương vị thơm béo, dịu nhẹ. Tìm hiểu thông tin sản phẩm và giá bán tại YoooMILK.",
+      "Khám phá sữa dê tươi nguyên chất YoooMILK 1L với hương vị thơm béo, dịu nhẹ và đặc trưng. Tìm hiểu thông tin sản phẩm và giá bán.",
 
     "goat-low":
-      "Trải nghiệm sữa dê tươi ít đường YoooMILK 1L với vị thanh nhẹ, dễ thưởng thức. Khám phá thông tin chi tiết và giá bán sản phẩm.",
+      "Trải nghiệm sữa dê tươi ít đường YoooMILK 1L với vị ngọt nhẹ nhàng, dành cho người yêu thích hương vị sữa dê không quá ngọt.",
 
     "goat-organic":
-      "Khám phá sữa dê Organic YoooMILK 1L – lựa chọn từ sữa dê dành cho người yêu thích sản phẩm dinh dưỡng. Xem thông tin chi tiết tại YoooMILK.",
+      "Khám phá sữa dê Organic YoooMILK 1L dành cho khách hàng quan tâm đến dòng sản phẩm sữa dê Organic. Xem thông tin chi tiết.",
 
     "almond":
-      "Khám phá sữa hạt hạnh nhân YoooMILK 1L với hương vị thơm ngon, phù hợp để bổ sung lựa chọn từ thực vật vào thực đơn hằng ngày.",
+      "Khám phá sữa hạt hạnh nhân YoooMILK 1L với hương vị hạnh nhân đặc trưng. Tìm hiểu thông tin sản phẩm và giá bán.",
 
     "yogurt":
-      "Thưởng thức sữa chua YoooMILK lốc 4 hộp với hương vị thơm ngon, tiện lợi. Khám phá thông tin sản phẩm và giá bán tại YoooMILK."
+      "Thưởng thức sữa chua YoooMILK lốc 4 hộp với kết cấu mềm mịn và hương vị thơm ngon. Khám phá thông tin sản phẩm."
   };
 
   const seoTitle = product.name + " | YoooMILK";
 
   const seoDescription =
     seoDescriptions[productId] ||
-    (
-      "Khám phá " +
-      product.name +
-      " tại YoooMILK. Tìm hiểu thông tin chi tiết, thành phần, quy cách và giá bán sản phẩm."
-    );
+    "Khám phá " + product.name +
+    " tại YoooMILK. Tìm hiểu thông tin và giá bán sản phẩm.";
 
   document.title = seoTitle;
 
   setMeta("name", "description", seoDescription);
   setMeta("name", "robots", "index, follow");
 
-  // ==========================================
-  // 5. TỐI ƯU CANONICAL URL
-  // ==========================================
-
   setLink("canonical", PRODUCT_URL);
 
-  // ==========================================
-  // 6. TỐI ƯU OPEN GRAPH
-  // ==========================================
 
-  const productImage = absoluteUrl(
-    product.image || fallbackImages[productId]
-  );
+  /* ===================================================
+     5. OPEN GRAPH
+  =================================================== */
+
+  const imagePath =
+    product.image || product.fallbackImage;
+
+  const productImage = absoluteUrl(imagePath);
 
   setMeta("property", "og:type", "product");
   setMeta("property", "og:site_name", "YoooMILK");
@@ -182,41 +180,56 @@ document.addEventListener("DOMContentLoaded", function () {
   setMeta("property", "og:image", productImage);
   setMeta("property", "og:url", PRODUCT_URL);
 
-  // ==========================================
-  // 7. TỐI ƯU TWITTER CARD
-  // ==========================================
+
+  /* ===================================================
+     6. TWITTER CARD
+  =================================================== */
 
   setMeta("name", "twitter:card", "summary_large_image");
   setMeta("name", "twitter:title", seoTitle);
   setMeta("name", "twitter:description", seoDescription);
   setMeta("name", "twitter:image", productImage);
 
-  // ==========================================
-  // 8. TỐI ƯU HÌNH ẢNH SẢN PHẨM
-  // ==========================================
 
-  const mainImage = document.getElementById("productImage");
-  const thumbImage = document.getElementById("thumbImage");
+  /* ===================================================
+     7. HIỂN THỊ HÌNH ẢNH
+  =================================================== */
 
-  const imagePath = product.image || fallbackImages[productId];
+  const mainImage = getElement("productImage");
+  const thumbImage = getElement("thumbImage");
+
+  function applyProductImage(imageElement) {
+    if (!imageElement) return;
+
+    imageElement.alt = product.name + " - YoooMILK";
+    imageElement.loading = "eager";
+    imageElement.decoding = "async";
+
+    imageElement.onerror = function () {
+      if (
+        product.fallbackImage &&
+        imageElement.dataset.fallbackApplied !== "true"
+      ) {
+        imageElement.dataset.fallbackApplied = "true";
+        imageElement.src = product.fallbackImage;
+      }
+    };
+
+    imageElement.src =
+      product.image || product.fallbackImage || "";
+  }
+
+  applyProductImage(mainImage);
+  applyProductImage(thumbImage);
 
   if (mainImage) {
-    mainImage.src = imagePath;
-    mainImage.alt =
-      product.name + " chính hãng từ thương hiệu YoooMILK";
-    mainImage.loading = "eager";
     mainImage.fetchPriority = "high";
-    mainImage.decoding = "async";
   }
 
-  if (thumbImage) {
-    thumbImage.src = imagePath;
-    thumbImage.alt = "Hình ảnh xem trước " + product.name;
-  }
 
-  // ==========================================
-  // 9. HIỂN THỊ THÔNG TIN SẢN PHẨM
-  // ==========================================
+  /* ===================================================
+     8. HIỂN THỊ THÔNG TIN SẢN PHẨM
+  =================================================== */
 
   setText("productCategory", product.category || product.label);
   setText("productName", product.name);
@@ -236,21 +249,23 @@ document.addEventListener("DOMContentLoaded", function () {
   renderList("usageList", product.usage);
   renderList("noteList", product.notes);
 
-  // ==========================================
-  // 10. DỮ LIỆU CẤU TRÚC PRODUCT SCHEMA
-  // ==========================================
+
+  /* ===================================================
+     9. PRODUCT STRUCTURED DATA
+  =================================================== */
 
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
     "description": product.description || seoDescription,
-    "image": [productImage],
+    "image": productImage ? [productImage] : [],
+    "sku": product.id,
     "brand": {
       "@type": "Brand",
       "name": "YoooMILK"
     },
-    "category": product.category || product.label,
+    "category": product.category,
     "offers": {
       "@type": "Offer",
       "url": PRODUCT_URL,
@@ -264,16 +279,17 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const productSchemaElement =
-    document.getElementById("productStructuredData");
+    getElement("productStructuredData");
 
   if (productSchemaElement) {
     productSchemaElement.textContent =
       JSON.stringify(productSchema);
   }
 
-  // ==========================================
-  // 11. BREADCRUMB SCHEMA
-  // ==========================================
+
+  /* ===================================================
+     10. BREADCRUMB STRUCTURED DATA
+  =================================================== */
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -301,33 +317,42 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const breadcrumbSchemaElement =
-    document.getElementById("breadcrumbStructuredData");
+    getElement("breadcrumbStructuredData");
 
   if (breadcrumbSchemaElement) {
     breadcrumbSchemaElement.textContent =
       JSON.stringify(breadcrumbSchema);
   }
 
-  // ==========================================
-  // 12. HIỂN THỊ NĂM HIỆN TẠI
-  // ==========================================
+
+  /* ===================================================
+     11. NĂM HIỆN TẠI
+  =================================================== */
 
   setText("year", new Date().getFullYear());
 
-  // ==========================================
-  // 13. MENU MOBILE
-  // ==========================================
 
-  const menuToggle = document.getElementById("menuToggle");
-  const mainNav = document.getElementById("mainNav");
+  /* ===================================================
+     12. MENU MOBILE
+  =================================================== */
+
+  const menuToggle = getElement("menuToggle");
+  const mainNav = getElement("mainNav");
 
   if (menuToggle && mainNav) {
+    menuToggle.setAttribute("aria-expanded", "false");
+
     menuToggle.addEventListener("click", function () {
       mainNav.classList.toggle("open");
 
-      const isOpen = mainNav.classList.contains("open");
+      const isOpen =
+        mainNav.classList.contains("open");
 
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
       menuToggle.setAttribute(
         "aria-label",
         isOpen ? "Đóng menu" : "Mở menu"
@@ -337,21 +362,30 @@ document.addEventListener("DOMContentLoaded", function () {
     mainNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Mở menu");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          "Mở menu"
+        );
       });
     });
   }
 
-  // ==========================================
-  // 14. CHỨC NĂNG CHỌN SỐ LƯỢNG
-  // ==========================================
+
+  /* ===================================================
+     13. ĐIỀU CHỈNH SỐ LƯỢNG
+  =================================================== */
 
   let quantity = 1;
 
-  const qtyValue = document.getElementById("qtyValue");
-  const qtyMinus = document.getElementById("qtyMinus");
-  const qtyPlus = document.getElementById("qtyPlus");
+  const qtyValue = getElement("qtyValue");
+  const qtyMinus = getElement("qtyMinus");
+  const qtyPlus = getElement("qtyPlus");
 
   function updateQuantity() {
     if (qtyValue) {
@@ -377,25 +411,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateQuantity();
 
-  // ==========================================
-  // 15. QUẢN LÝ GIỎ HÀNG LOCAL STORAGE
-  // ==========================================
+
+  /* ===================================================
+     14. QUẢN LÝ GIỎ HÀNG
+  =================================================== */
 
   function getCart() {
     try {
-      return JSON.parse(
-        localStorage.getItem("yoomilk-cart")
-      ) || {};
+      const savedCart =
+        JSON.parse(localStorage.getItem(CART_KEY));
+
+      if (
+        savedCart &&
+        typeof savedCart === "object" &&
+        !Array.isArray(savedCart)
+      ) {
+        return savedCart;
+      }
+
+      return {};
+
     } catch (error) {
+      console.error("Không thể đọc giỏ hàng:", error);
       return {};
     }
   }
 
   function saveCart(cart) {
-    localStorage.setItem(
-      "yoomilk-cart",
-      JSON.stringify(cart)
-    );
+    try {
+      localStorage.setItem(
+        CART_KEY,
+        JSON.stringify(cart)
+      );
+
+      return true;
+
+    } catch (error) {
+      console.error("Không thể lưu giỏ hàng:", error);
+      return false;
+    }
   }
 
   function addProductToCart() {
@@ -404,18 +458,23 @@ document.addEventListener("DOMContentLoaded", function () {
     cart[product.id] =
       (Number(cart[product.id]) || 0) + quantity;
 
-    saveCart(cart);
+    return saveCart(cart);
   }
 
-  // ==========================================
-  // 16. THÔNG BÁO TOAST
-  // ==========================================
 
-  const toast = document.getElementById("detailToast");
+  /* ===================================================
+     15. THÔNG BÁO TOAST
+  =================================================== */
+
+  const toast = getElement("detailToast");
+
   let toastTimer;
 
   function showToast(message) {
-    if (!toast) return;
+    if (!toast) {
+      alert(message);
+      return;
+    }
 
     toast.textContent = message;
     toast.classList.add("show");
@@ -427,37 +486,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2500);
   }
 
-  // ==========================================
-  // 17. NÚT THÊM VÀO GIỎ HÀNG
-  // ==========================================
 
-  const addToCartButton =
-    document.getElementById("addToCart");
+  /* ===================================================
+     16. NÚT THÊM VÀO GIỎ HÀNG
+  =================================================== */
+
+  const addToCartButton = getElement("addToCart");
 
   if (addToCartButton) {
     addToCartButton.addEventListener("click", function () {
-      addProductToCart();
+      const success = addProductToCart();
 
-      showToast(
-        "Đã thêm " +
-        quantity +
-        " sản phẩm vào giỏ hàng!"
-      );
+      if (success) {
+        showToast(
+          "Đã thêm " + quantity +
+          " sản phẩm vào giỏ hàng!"
+        );
+      } else {
+        showToast(
+          "Không thể lưu giỏ hàng. Vui lòng thử lại."
+        );
+      }
     });
   }
 
-  // ==========================================
-  // 18. NÚT MUA NGAY
-  // ==========================================
 
-  const buyNowButton =
-    document.getElementById("buyNow");
+  /* ===================================================
+     17. NÚT MUA NGAY
+  =================================================== */
+
+  const buyNowButton = getElement("buyNow");
 
   if (buyNowButton) {
     buyNowButton.addEventListener("click", function () {
-      addProductToCart();
+      const success = addProductToCart();
 
-      showToast("Đang chuyển đến trang mua sắm...");
+      if (!success) {
+        showToast(
+          "Không thể lưu giỏ hàng. Vui lòng thử lại."
+        );
+        return;
+      }
+
+      showToast("Đã thêm sản phẩm. Đang chuyển đến trang mua sắm...");
 
       setTimeout(function () {
         window.location.href = "index.html#products";
@@ -465,16 +536,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ==========================================
-  // 19. NHẤN ẢNH THU NHỎ ĐỂ XEM ẢNH CHÍNH
-  // ==========================================
+
+  /* ===================================================
+     18. ẢNH THU NHỎ
+  =================================================== */
 
   const thumbButton =
     document.querySelector(".detail-thumb");
 
   if (thumbButton && mainImage && thumbImage) {
     thumbButton.addEventListener("click", function () {
+      const currentMainImage = mainImage.src;
+
       mainImage.src = thumbImage.src;
+      thumbImage.src = currentMainImage;
     });
   }
+
+
+  /* ===================================================
+     19. KIỂM TRA HOÀN TẤT
+  =================================================== */
+
+  console.log(
+    "YoooMILK: Đã tải thành công sản phẩm",
+    product.name
+  );
+
 });
