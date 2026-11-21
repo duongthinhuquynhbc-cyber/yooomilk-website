@@ -1,534 +1,267 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+/* =====================================================
+   YoooMILK - DATABASE SẢN PHẨM
+   File: js/products-data.js
+===================================================== */
 
-  // ==========================================
-  // 1. CẤU HÌNH VÀ LẤY DỮ LIỆU SẢN PHẨM
-  // ==========================================
+window.PRODUCTS_DATA = {
 
-  const BASE_URL =
-    "https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/";
+  /* -----------------------------------------------------
+     1. SỮA DÊ TƯƠI NGUYÊN CHẤT
+  ----------------------------------------------------- */
+  "goat-original": {
+    id: "goat-original",
+    name: "Sữa dê tươi nguyên chất YoooMILK",
+    category: "Sữa dê tươi",
+    label: "Nguyên chất",
+    size: "1L",
+    price: 69000,
 
-  const params = new URLSearchParams(window.location.search);
-  const productId = params.get("id") || "goat-original";
+    image: "assets/product-goat-original.webp",
+    fallbackImage: "assets/product-goat-original.png",
 
-  const product =
-    typeof PRODUCTS_DATA !== "undefined"
-      ? PRODUCTS_DATA[productId]
-      : null;
+    short:
+      "Thưởng thức hương vị sữa dê nguyên chất với cảm giác thơm béo, dịu nhẹ và gần gũi trong từng lần sử dụng.",
 
-  const PRODUCT_URL =
-    BASE_URL + "product.html?id=" + encodeURIComponent(productId);
+    description:
+      "Sữa dê tươi nguyên chất YoooMILK là lựa chọn dành cho những khách hàng muốn khám phá hương vị đặc trưng của sữa dê. Sản phẩm mang đến trải nghiệm thưởng thức thơm béo, dịu nhẹ, phù hợp để sử dụng trong những khoảnh khắc bổ sung thức uống cho sinh hoạt hằng ngày. Với quy cách 1L tiện lợi, sản phẩm có thể được sử dụng tại nhà, trong bữa sáng hoặc những khoảng nghỉ giữa ngày. YoooMILK mong muốn mang đến một lựa chọn mới mẻ cho người tiêu dùng yêu thích các sản phẩm từ sữa dê.",
 
-  // ==========================================
-  // 2. KIỂM TRA SẢN PHẨM
-  // ==========================================
+    points: [
+      "Hương vị sữa dê nguyên chất đặc trưng.",
+      "Cảm nhận thơm béo và dịu nhẹ khi thưởng thức.",
+      "Quy cách 1L thuận tiện cho nhu cầu sử dụng tại nhà.",
+      "Có thể dùng trực tiếp hoặc kết hợp cùng các món ăn phù hợp.",
+      "Là lựa chọn dành cho người muốn trải nghiệm sản phẩm từ sữa dê."
+    ],
 
-  if (!product) {
-    document.title = "Không tìm thấy sản phẩm | YoooMILK";
+    ingredients:
+      "Vui lòng xem bảng thành phần được in trên bao bì sản phẩm để biết chính xác thành phần và tỷ lệ nguyên liệu.",
 
-    const name = document.getElementById("productName");
-    const short = document.getElementById("productShort");
-    const price = document.getElementById("productPrice");
+    usage: [
+      "Sử dụng trực tiếp theo hướng dẫn trên bao bì.",
+      "Có thể thưởng thức lạnh để cảm nhận hương vị thơm ngon.",
+      "Có thể kết hợp cùng ngũ cốc hoặc các món ăn phù hợp.",
+      "Lắc nhẹ trước khi sử dụng nếu hướng dẫn trên bao bì có yêu cầu."
+    ],
 
-    if (name) name.textContent = "Không tìm thấy sản phẩm";
+    nutrition:
+      "Thông tin năng lượng, protein, chất béo, carbohydrate và các thành phần dinh dưỡng khác được cập nhật theo bảng giá trị dinh dưỡng trên bao bì sản phẩm.",
 
-    if (short) {
-      short.textContent =
-        "Sản phẩm bạn đang tìm kiếm hiện không tồn tại hoặc đường dẫn không hợp lệ.";
-    }
+    notes: [
+      "Kiểm tra tình trạng bao bì trước khi sử dụng.",
+      "Tuân thủ hướng dẫn bảo quản được in trên nhãn sản phẩm.",
+      "Sử dụng trong thời hạn được nhà sản xuất công bố."
+    ],
 
-    if (price) price.textContent = "";
+    storage:
+      "Bảo quản theo hướng dẫn trên bao bì. Sau khi mở nắp, cần thực hiện đúng điều kiện bảo quản được nhà sản xuất khuyến nghị."
+  },
 
-    return;
+
+  /* -----------------------------------------------------
+     2. SỮA DÊ TƯƠI ÍT ĐƯỜNG
+  ----------------------------------------------------- */
+  "goat-low": {
+    id: "goat-low",
+    name: "Sữa dê tươi ít đường YoooMILK",
+    category: "Sữa dê tươi",
+    label: "Ít đường",
+    size: "1L",
+    price: 72000,
+
+    image: "assets/product-goat-low-sugar.webp",
+    fallbackImage: "assets/product-goat-low-sugar.png",
+
+    short:
+      "Sự kết hợp giữa hương vị đặc trưng của sữa dê và vị ngọt nhẹ, dành cho người yêu thích thức uống không quá ngọt.",
+
+    description:
+      "Sữa dê tươi ít đường YoooMILK hướng đến những khách hàng yêu thích hương vị sữa dê nhưng mong muốn trải nghiệm vị ngọt nhẹ nhàng hơn. Sản phẩm giữ lại nét đặc trưng của dòng sữa dê, đồng thời mang đến lựa chọn phù hợp với khẩu vị của người không thích thức uống quá ngọt. Với dung tích 1L, sản phẩm thuận tiện để sử dụng tại nhà, trong bữa sáng hoặc các thời điểm nghỉ ngơi trong ngày. Đây là một lựa chọn đáng cân nhắc khi khách hàng muốn đa dạng hóa các sản phẩm từ sữa trong sinh hoạt hằng ngày.",
+
+    points: [
+      "Hương vị sữa dê đặc trưng.",
+      "Định hướng vị ngọt nhẹ, không quá ngọt.",
+      "Phù hợp với người yêu thích thức uống có vị ngọt dịu.",
+      "Dung tích 1L thuận tiện cho nhu cầu sử dụng.",
+      "Có thể kết hợp cùng bữa sáng và các món ăn phù hợp."
+    ],
+
+    ingredients:
+      "Vui lòng xem bảng thành phần trên bao bì để biết chính xác thành phần sữa, đường và các nguyên liệu được sử dụng.",
+
+    usage: [
+      "Sử dụng trực tiếp theo hướng dẫn trên bao bì.",
+      "Có thể dùng lạnh để tăng cảm giác thơm ngon.",
+      "Thưởng thức cùng bữa sáng hoặc bữa ăn nhẹ.",
+      "Có thể kết hợp với ngũ cốc và các món ăn phù hợp."
+    ],
+
+    nutrition:
+      "Thông tin năng lượng, hàm lượng đường, protein, chất béo và các chỉ tiêu dinh dưỡng khác cần được đối chiếu với bảng dinh dưỡng chính thức trên bao bì.",
+
+    notes: [
+      "Sản phẩm có định hướng vị ít ngọt; khách hàng nên tham khảo hàm lượng đường thực tế trên nhãn.",
+      "Kiểm tra bao bì trước khi sử dụng.",
+      "Tuân thủ hướng dẫn bảo quản và hạn sử dụng của nhà sản xuất."
+    ],
+
+    storage:
+      "Bảo quản theo hướng dẫn được in trên bao bì. Sau khi mở nắp, thực hiện đúng điều kiện bảo quản do nhà sản xuất khuyến nghị."
+  },
+
+
+  /* -----------------------------------------------------
+     3. SỮA DÊ ORGANIC
+  ----------------------------------------------------- */
+  "goat-organic": {
+    id: "goat-organic",
+    name: "Sữa dê Organic YoooMILK",
+    category: "Sữa dê",
+    label: "Organic",
+    size: "1L",
+    price: 79000,
+
+    image: "assets/product-goat-organic.webp",
+    fallbackImage: "assets/product-goat-organic.png",
+
+    short:
+      "Lựa chọn dành cho khách hàng quan tâm đến dòng sản phẩm sữa dê Organic và mong muốn khám phá thêm những trải nghiệm từ sữa dê.",
+
+    description:
+      "Sữa dê Organic YoooMILK được giới thiệu dành cho nhóm khách hàng quan tâm đến các sản phẩm từ sữa dê thuộc dòng Organic. Sản phẩm mở rộng lựa chọn cho người tiêu dùng đang tìm kiếm những trải nghiệm mới trong danh mục thức uống từ sữa. Với quy cách 1L, sản phẩm phù hợp để tìm hiểu và cân nhắc sử dụng trong sinh hoạt hằng ngày. YoooMILK hướng đến việc mang lại thông tin rõ ràng về sản phẩm, giúp khách hàng có cơ sở lựa chọn dựa trên nhu cầu và sự quan tâm của mình. Khách hàng nên tham khảo thông tin chứng nhận và nguồn gốc được công bố trên bao bì trước khi mua.",
+
+    points: [
+      "Thuộc danh mục sản phẩm sữa dê Organic của YoooMILK.",
+      "Dành cho khách hàng quan tâm đến dòng sản phẩm Organic.",
+      "Mở rộng lựa chọn trong nhóm sản phẩm từ sữa dê.",
+      "Quy cách 1L thuận tiện cho nhu cầu sử dụng.",
+      "Khuyến khích khách hàng tìm hiểu thông tin nguồn gốc và chứng nhận trên bao bì."
+    ],
+
+    ingredients:
+      "Thành phần cụ thể cần được đối chiếu với nhãn sản phẩm chính thức. Khách hàng vui lòng tham khảo thông tin được công bố trên bao bì.",
+
+    usage: [
+      "Sử dụng theo hướng dẫn của nhà sản xuất.",
+      "Có thể thưởng thức trực tiếp nếu bao bì cho phép.",
+      "Tham khảo hướng dẫn sử dụng và bảo quản trước khi mở sản phẩm."
+    ],
+
+    nutrition:
+      "Các chỉ tiêu dinh dưỡng cần được cập nhật theo bảng giá trị dinh dưỡng chính thức trên bao bì sản phẩm.",
+
+    notes: [
+      "Khách hàng nên kiểm tra thông tin chứng nhận Organic và đơn vị cấp chứng nhận trên bao bì hoặc hồ sơ công bố.",
+      "Không suy diễn chứng nhận hoặc tiêu chuẩn sản phẩm ngoài thông tin được nhà sản xuất xác nhận.",
+      "Kiểm tra hạn sử dụng và tình trạng bao bì trước khi dùng."
+    ],
+
+    storage:
+      "Bảo quản theo điều kiện được nhà sản xuất ghi trên bao bì. Sau khi mở nắp, tuân thủ hướng dẫn bảo quản tương ứng."
+  },
+
+
+  /* -----------------------------------------------------
+     4. SỮA HẠT HẠNH NHÂN
+  ----------------------------------------------------- */
+  "almond": {
+    id: "almond",
+    name: "Sữa hạt hạnh nhân YoooMILK",
+    category: "Sữa hạt",
+    label: "Hạnh nhân",
+    size: "1L",
+    price: 59000,
+
+    image: "assets/sua-hat-hanh-nhan.webp",
+    fallbackImage: "assets/sua-hat-hanh-nhan.png",
+
+    short:
+      "Khám phá hương vị hạnh nhân đặc trưng trong một lựa chọn thức uống từ thực vật, giúp làm phong phú thực đơn mỗi ngày.",
+
+    description:
+      "Sữa hạt hạnh nhân YoooMILK mang đến lựa chọn thức uống từ thực vật dành cho khách hàng yêu thích hương vị đặc trưng của hạnh nhân. Sản phẩm góp phần đa dạng hóa danh mục thức uống bên cạnh các dòng sản phẩm từ sữa dê của thương hiệu. Với dung tích 1L, sữa hạt hạnh nhân có thể được sử dụng trong bữa sáng, bữa ăn nhẹ hoặc kết hợp cùng ngũ cốc và một số món ăn phù hợp. Đây là lựa chọn dành cho những ai muốn khám phá thêm hương vị từ các loại hạt trong thói quen thưởng thức hằng ngày.",
+
+    points: [
+      "Hương vị hạnh nhân đặc trưng.",
+      "Thuộc nhóm thức uống từ thực vật.",
+      "Mang đến thêm lựa chọn bên cạnh các sản phẩm từ sữa dê.",
+      "Dung tích 1L thuận tiện cho nhu cầu sử dụng.",
+      "Có thể kết hợp với ngũ cốc và các món ăn phù hợp."
+    ],
+
+    ingredients:
+      "Vui lòng tham khảo bảng thành phần trên bao bì để biết chính xác tỷ lệ hạnh nhân, nước và các nguyên liệu khác được sử dụng.",
+
+    usage: [
+      "Sử dụng trực tiếp theo hướng dẫn trên bao bì.",
+      "Có thể dùng lạnh để cảm nhận hương vị.",
+      "Kết hợp cùng ngũ cốc hoặc bữa ăn nhẹ.",
+      "Có thể sử dụng trong một số công thức đồ uống và món ăn phù hợp."
+    ],
+
+    nutrition:
+      "Thông tin năng lượng, protein, chất béo, carbohydrate và các chỉ tiêu dinh dưỡng khác cần được đối chiếu với nhãn sản phẩm chính thức.",
+
+    notes: [
+      "Sản phẩm có thành phần hạnh nhân; người có dị ứng với hạnh nhân cần đọc kỹ thông tin trên bao bì trước khi sử dụng.",
+      "Kiểm tra tình trạng bao bì và hạn sử dụng.",
+      "Tuân thủ hướng dẫn bảo quản của nhà sản xuất."
+    ],
+
+    storage:
+      "Bảo quản theo hướng dẫn trên bao bì. Sau khi mở nắp, thực hiện đúng điều kiện bảo quản do nhà sản xuất khuyến nghị."
+  },
+
+
+  /* -----------------------------------------------------
+     5. SỮA CHUA YoooMILK
+  ----------------------------------------------------- */
+  "yogurt": {
+    id: "yogurt",
+    name: "Sữa chua YoooMILK",
+    category: "Sữa chua",
+    label: "Lốc 4 hộp",
+    size: "Lốc 4 hộp",
+    price: 49000,
+
+    image: "assets/sua-chua-yooomilk.webp",
+    fallbackImage: "assets/sua-chua-yooomilk.png",
+
+    short:
+      "Sữa chua với kết cấu mềm mịn và hương vị thơm ngon, phù hợp cho những bữa ăn nhẹ và khoảnh khắc thưởng thức mỗi ngày.",
+
+    description:
+      "Sữa chua YoooMILK là lựa chọn dành cho khách hàng yêu thích những sản phẩm có kết cấu mềm mịn và hương vị thơm ngon. Sản phẩm được đóng gói theo lốc 4 hộp, thuận tiện cho việc sử dụng tại nhà, mang theo hoặc chia sẻ cùng người thân. Với cách thưởng thức linh hoạt, sữa chua có thể trở thành món ăn nhẹ trong ngày hoặc kết hợp cùng trái cây và một số loại ngũ cốc để tạo nên những trải nghiệm đa dạng hơn. YoooMILK mong muốn góp phần làm phong phú thực đơn hằng ngày bằng một lựa chọn sữa chua tiện lợi.",
+
+    points: [
+      "Kết cấu mềm mịn, dễ thưởng thức.",
+      "Hương vị thơm ngon.",
+      "Quy cách lốc 4 hộp thuận tiện.",
+      "Phù hợp để sử dụng trong bữa ăn nhẹ.",
+      "Có thể kết hợp cùng trái cây và ngũ cốc."
+    ],
+
+    ingredients:
+      "Vui lòng xem bảng thành phần trên bao bì để biết chính xác nguyên liệu, chủng men và các thành phần được sử dụng.",
+
+    usage: [
+      "Sử dụng trực tiếp theo hướng dẫn trên bao bì.",
+      "Có thể thưởng thức lạnh.",
+      "Kết hợp cùng trái cây tươi hoặc ngũ cốc nếu phù hợp.",
+      "Sử dụng theo khẩu phần và hướng dẫn của nhà sản xuất."
+    ],
+
+    nutrition:
+      "Thông tin năng lượng, protein, chất béo, carbohydrate, đường và các chỉ tiêu dinh dưỡng khác được xác định theo bảng dinh dưỡng chính thức trên bao bì.",
+
+    notes: [
+      "Kiểm tra tình trạng hộp và bao bì trước khi sử dụng.",
+      "Không sử dụng sản phẩm khi bao bì có dấu hiệu bất thường.",
+      "Tuân thủ điều kiện bảo quản và hạn sử dụng được in trên nhãn."
+    ],
+
+    storage:
+      "Bảo quản theo hướng dẫn trên bao bì. Sữa chua cần được bảo quản đúng điều kiện nhiệt độ do nhà sản xuất quy định."
   }
 
-  // ==========================================
-  // 3. CÁC HÀM HỖ TRỢ
-  // ==========================================
-
-  function setText(id, value) {
-    const element = document.getElementById(id);
-
-    if (element) {
-      element.textContent = value == null ? "" : value;
-    }
-  }
-
-  function setMeta(attribute, key, content) {
-    let element = document.querySelector(
-      `meta[${attribute}="${key}"]`
-    );
-
-    if (!element) {
-      element = document.createElement("meta");
-      element.setAttribute(attribute, key);
-      document.head.appendChild(element);
-    }
-
-    element.setAttribute("content", content || "");
-  }
-
-  function setLink(rel, href) {
-    let element = document.querySelector(
-      `link[rel="${rel}"]`
-    );
-
-    if (!element) {
-      element = document.createElement("link");
-      element.rel = rel;
-      document.head.appendChild(element);
-    }
-
-    element.href = href;
-  }
-
-  function absoluteUrl(path) {
-    if (!path) return "";
-
-    return new URL(path, BASE_URL).href;
-  }
-
-  function renderList(id, items) {
-    const element = document.getElementById(id);
-
-    if (!element) return;
-
-    element.replaceChildren();
-
-    const list = Array.isArray(items)
-      ? items
-      : items
-        ? [items]
-        : [];
-
-    list.forEach(function (item) {
-      const li = document.createElement("li");
-      li.textContent = item;
-      element.appendChild(li);
-    });
-  }
-
-  function formatPrice(price) {
-    return Number(price || 0).toLocaleString("vi-VN") + "₫";
-  }
-
-  // ==========================================
-  // 4. SEO TITLE VÀ META DESCRIPTION
-  // ==========================================
-
-  const seoDescriptions = {
-    "goat-original":
-      "Khám phá sữa dê tươi nguyên chất YoooMILK 1L với hương vị sữa dê tự nhiên, thơm béo và dịu nhẹ. Tìm hiểu thông tin sản phẩm và giá bán.",
-
-    "goat-low":
-      "Trải nghiệm sữa dê tươi ít đường YoooMILK 1L với hương vị dịu nhẹ, phù hợp với người yêu thích sữa dê và muốn lựa chọn ít ngọt hơn.",
-
-    "goat-organic":
-      "Khám phá sữa dê Organic YoooMILK 1L dành cho khách hàng quan tâm đến dòng sản phẩm sữa dê hữu cơ. Xem thông tin chi tiết tại YoooMILK.",
-
-    "almond":
-      "Khám phá sữa hạt hạnh nhân YoooMILK 1L với hương vị hạnh nhân đặc trưng. Tìm hiểu thông tin sản phẩm và lựa chọn thức uống từ thực vật.",
-
-    "yogurt":
-      "Thưởng thức sữa chua YoooMILK lốc 4 hộp với kết cấu mềm mịn và hương vị thơm ngon. Khám phá thông tin sản phẩm tại YoooMILK."
-  };
-
-  const seoTitle = product.name + " | YoooMILK";
-
-  const seoDescription =
-    seoDescriptions[productId] ||
-    (
-      "Khám phá " +
-      product.name +
-      " tại YoooMILK. Tìm hiểu thông tin, quy cách và giá bán sản phẩm."
-    );
-
-  document.title = seoTitle;
-
-  setMeta("name", "description", seoDescription);
-  setMeta("name", "robots", "index, follow");
-
-  // ==========================================
-  // 5. CANONICAL URL
-  // ==========================================
-
-  setLink("canonical", PRODUCT_URL);
-
-  // ==========================================
-  // 6. OPEN GRAPH
-  // ==========================================
-
-  const imagePath = product.image || product.fallbackImage;
-  const productImage = absoluteUrl(imagePath);
-
-  setMeta("property", "og:type", "product");
-  setMeta("property", "og:site_name", "YoooMILK");
-  setMeta("property", "og:locale", "vi_VN");
-  setMeta("property", "og:title", seoTitle);
-  setMeta("property", "og:description", seoDescription);
-  setMeta("property", "og:image", productImage);
-  setMeta("property", "og:url", PRODUCT_URL);
-
-  // ==========================================
-  // 7. TWITTER CARD
-  // ==========================================
-
-  setMeta("name", "twitter:card", "summary_large_image");
-  setMeta("name", "twitter:title", seoTitle);
-  setMeta("name", "twitter:description", seoDescription);
-  setMeta("name", "twitter:image", productImage);
-
-  // ==========================================
-  // 8. HIỂN THỊ ẢNH SẢN PHẨM
-  // WEBP FIRST + PNG FALLBACK
-  // ==========================================
-
-  const mainImage =
-    document.getElementById("productImage");
-
-  const thumbImage =
-    document.getElementById("thumbImage");
-
-  const primaryImage = product.image;
-  const fallbackImage = product.fallbackImage;
-
-  function applyProductImage(imageElement) {
-    if (!imageElement) return;
-
-    imageElement.alt =
-      product.name + " - YoooMILK";
-
-    imageElement.loading = "eager";
-    imageElement.decoding = "async";
-
-    imageElement.onerror = function () {
-      if (
-        fallbackImage &&
-        imageElement.dataset.fallbackApplied !== "true"
-      ) {
-        imageElement.dataset.fallbackApplied = "true";
-        imageElement.src = fallbackImage;
-      }
-    };
-
-    imageElement.src = primaryImage || fallbackImage || "";
-  }
-
-  applyProductImage(mainImage);
-  applyProductImage(thumbImage);
-
-  if (mainImage) {
-    mainImage.fetchPriority = "high";
-  }
-
-  // ==========================================
-  // 9. HIỂN THỊ THÔNG TIN SẢN PHẨM
-  // ==========================================
-
-  setText("productCategory", product.category || product.label);
-  setText("productName", product.name);
-  setText("crumbName", product.name);
-  setText("productShort", product.short);
-  setText("productPrice", formatPrice(product.price));
-  setText("productDescription", product.description);
-
-  setText("specType", product.category);
-  setText("specSize", product.size);
-  setText("specStorage", product.storage);
-
-  setText("ingredientText", product.ingredients);
-  setText("nutritionText", product.nutrition);
-
-  renderList("productPoints", product.points);
-  renderList("usageList", product.usage);
-  renderList("noteList", product.notes);
-
-  // ==========================================
-  // 10. PRODUCT STRUCTURED DATA
-  // ==========================================
-
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": product.name,
-    "description": product.description || seoDescription,
-    "image": productImage ? [productImage] : [],
-    "sku": product.id,
-    "brand": {
-      "@type": "Brand",
-      "name": "YoooMILK"
-    },
-    "category": product.category,
-    "offers": {
-      "@type": "Offer",
-      "url": PRODUCT_URL,
-      "priceCurrency": "VND",
-      "price": Number(product.price),
-      "seller": {
-        "@type": "Organization",
-        "name": "YoooMILK"
-      }
-    }
-  };
-
-  const productSchemaElement =
-    document.getElementById("productStructuredData");
-
-  if (productSchemaElement) {
-    productSchemaElement.textContent =
-      JSON.stringify(productSchema);
-  }
-
-  // ==========================================
-  // 11. BREADCRUMB STRUCTURED DATA
-  // ==========================================
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Trang chủ",
-        "item": BASE_URL
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Sản phẩm",
-        "item": BASE_URL + "index.html#products"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": product.name,
-        "item": PRODUCT_URL
-      }
-    ]
-  };
-
-  const breadcrumbSchemaElement =
-    document.getElementById("breadcrumbStructuredData");
-
-  if (breadcrumbSchemaElement) {
-    breadcrumbSchemaElement.textContent =
-      JSON.stringify(breadcrumbSchema);
-  }
-
-  // ==========================================
-  // 12. NĂM HIỆN TẠI
-  // ==========================================
-
-  setText("year", new Date().getFullYear());
-
-  // ==========================================
-  // 13. MENU MOBILE
-  // ==========================================
-
-  const menuToggle =
-    document.getElementById("menuToggle");
-
-  const mainNav =
-    document.getElementById("mainNav");
-
-  if (menuToggle && mainNav) {
-    menuToggle.setAttribute("aria-expanded", "false");
-
-    menuToggle.addEventListener("click", function () {
-      mainNav.classList.toggle("open");
-
-      const isOpen =
-        mainNav.classList.contains("open");
-
-      menuToggle.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
-
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Đóng menu" : "Mở menu"
-      );
-    });
-
-    mainNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mainNav.classList.remove("open");
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menuToggle.setAttribute(
-          "aria-label",
-          "Mở menu"
-        );
-      });
-    });
-  }
-
-  // ==========================================
-  // 14. ĐIỀU CHỈNH SỐ LƯỢNG
-  // ==========================================
-
-  let quantity = 1;
-
-  const qtyValue =
-    document.getElementById("qtyValue");
-
-  const qtyMinus =
-    document.getElementById("qtyMinus");
-
-  const qtyPlus =
-    document.getElementById("qtyPlus");
-
-  function updateQuantity() {
-    if (qtyValue) {
-      qtyValue.textContent = quantity;
-    }
-  }
-
-  if (qtyMinus) {
-    qtyMinus.addEventListener("click", function () {
-      if (quantity > 1) {
-        quantity--;
-        updateQuantity();
-      }
-    });
-  }
-
-  if (qtyPlus) {
-    qtyPlus.addEventListener("click", function () {
-      quantity++;
-      updateQuantity();
-    });
-  }
-
-  updateQuantity();
-
-  // ==========================================
-  // 15. QUẢN LÝ GIỎ HÀNG
-  // ==========================================
-
-  function getCart() {
-    try {
-      const savedCart =
-        JSON.parse(localStorage.getItem("yoomilk-cart"));
-
-      return savedCart &&
-        typeof savedCart === "object" &&
-        !Array.isArray(savedCart)
-        ? savedCart
-        : {};
-    } catch (error) {
-      return {};
-    }
-  }
-
-  function saveCart(cart) {
-    try {
-      localStorage.setItem(
-        "yoomilk-cart",
-        JSON.stringify(cart)
-      );
-
-      return true;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  function addProductToCart() {
-    const cart = getCart();
-
-    cart[product.id] =
-      (Number(cart[product.id]) || 0) + quantity;
-
-    return saveCart(cart);
-  }
-
-  // ==========================================
-  // 16. THÔNG BÁO TOAST
-  // ==========================================
-
-  const toast =
-    document.getElementById("detailToast");
-
-  let toastTimer;
-
-  function showToast(message) {
-    if (!toast) return;
-
-    toast.textContent = message;
-    toast.classList.add("show");
-
-    clearTimeout(toastTimer);
-
-    toastTimer = setTimeout(function () {
-      toast.classList.remove("show");
-    }, 2500);
-  }
-
-  // ==========================================
-  // 17. NÚT THÊM VÀO GIỎ HÀNG
-  // ==========================================
-
-  const addToCartButton =
-    document.getElementById("addToCart");
-
-  if (addToCartButton) {
-    addToCartButton.addEventListener("click", function () {
-      const success = addProductToCart();
-
-      if (success) {
-        showToast(
-          "Đã thêm " +
-          quantity +
-          " sản phẩm vào giỏ hàng!"
-        );
-      } else {
-        showToast("Không thể lưu giỏ hàng. Vui lòng thử lại.");
-      }
-    });
-  }
-
-  // ==========================================
-  // 18. NÚT MUA NGAY
-  // ==========================================
-
-  const buyNowButton =
-    document.getElementById("buyNow");
-
-  if (buyNowButton) {
-    buyNowButton.addEventListener("click", function () {
-      const success = addProductToCart();
-
-      if (!success) {
-        showToast("Không thể lưu giỏ hàng. Vui lòng thử lại.");
-        return;
-      }
-
-      showToast("Đang chuyển đến trang mua sắm...");
-
-      setTimeout(function () {
-        window.location.href = "index.html#products";
-      }, 800);
-    });
-  }
-
-  // ==========================================
-  // 19. NHẤN ẢNH THU NHỎ ĐỂ CẬP NHẬT ẢNH CHÍNH
-  // ==========================================
-
-  const thumbButton =
-    document.querySelector(".detail-thumb");
-
-  if (thumbButton && mainImage && thumbImage) {
-    thumbButton.addEventListener("click", function () {
-      mainImage.src = thumbImage.src;
-    });
-  }
-
-});
+};
