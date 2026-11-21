@@ -3,131 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Câu hỏi thường gặp | YoooMILK</title>
-  <meta name="description" content="Tìm câu trả lời chi tiết về sản phẩm YoooMILK, cách xem thông tin, thêm giỏ hàng và quy trình đặt hàng trên website.">
+  <title>Trung tâm hỗ trợ & Câu hỏi thường gặp | YoooMILK</title>
+  <meta name="description" content="Giải đáp chi tiết về các dòng sản phẩm YoooMILK, cách lựa chọn, thành phần, bảo quản, giỏ hàng và quy trình đặt hàng trên website.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/faq.html">
   <link rel="icon" href="assets/logo-yooomilk.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .faq-page-hero{padding:76px 6vw 54px;text-align:center;background:linear-gradient(135deg,#eaf7ff,#f8fcff)}
-    .faq-page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);color:var(--ink);margin:12px 0}
-    .faq-page-hero p{max-width:720px;margin:0 auto;color:var(--muted);line-height:1.9;font-size:14px}
-    .faq-page-main{max-width:980px;margin:0 auto;padding:48px 24px 80px}
-    .faq-back{display:inline-block;margin-bottom:28px;color:var(--blue);font-weight:700;text-decoration:none;font-size:13px}
-    .faq-detail{scroll-margin-top:100px;padding:26px 0;border-bottom:1px solid var(--line)}
-    .faq-detail h2{font-size:20px;color:var(--ink);margin:0 0 14px;line-height:1.5}
-    .faq-detail p,.faq-detail li{font-size:14px;line-height:1.9;color:var(--muted)}
-    .faq-detail ul,.faq-detail ol{padding-left:22px}
-    .faq-note{padding:16px 18px;background:#f0f8ff;border-left:3px solid var(--blue);border-radius:8px;color:var(--ink);font-size:13px;line-height:1.8;margin-top:14px}
-    .faq-page-contact{margin-top:36px;padding:26px;border-radius:16px;background:#f5faff;text-align:center}
-    .faq-page-contact p{color:var(--muted);line-height:1.8}
-    .faq-page-contact a{color:var(--blue);font-weight:700}
-    @media(max-width:700px){.faq-page-hero{padding:54px 22px 40px}.faq-page-main{padding:32px 20px 56px}.faq-detail h2{font-size:18px}}
+    :root{--faq-ink:#064b9b;--faq-blue:#0879d8;--faq-muted:#637b91;--faq-line:#e1edf7;--faq-soft:#f3f9ff}
+    html{scroll-behavior:smooth;scroll-padding-top:110px}
+    body{background:#fbfdff;color:#173c62}
+    .faq-hero{position:relative;overflow:hidden;background:linear-gradient(115deg,#eaf5ff 0%,#f7fbff 58%,#e5f3ff 100%);padding:74px 7vw 68px}
+    .faq-hero:before,.faq-hero:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.48);pointer-events:none}
+    .faq-hero:before{width:340px;height:340px;right:-65px;top:-155px}.faq-hero:after{width:190px;height:190px;right:17%;bottom:-125px}
+    .faq-hero-inner{max-width:1160px;margin:auto;position:relative;z-index:1}
+    .faq-kicker{display:inline-flex;align-items:center;gap:9px;color:var(--faq-blue);font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+    .faq-kicker:before{content:"";width:25px;height:2px;background:var(--faq-blue)}
+    .faq-hero h1{font:600 clamp(38px,5vw,60px)/1.1 'Playfair Display',Georgia,serif;color:var(--faq-ink);letter-spacing:-1.5px;margin:17px 0 15px;max-width:720px}
+    .faq-hero p{max-width:660px;color:#607b96;font-size:15px;line-height:1.9;margin:0}
+    .faq-search-wrap{max-width:590px;margin-top:28px;position:relative}
+    .faq-search-wrap input{width:100%;height:54px;border:1px solid #d5e6f5;border-radius:8px;background:#fff;padding:0 18px 0 48px;font:500 13px 'DM Sans',sans-serif;color:#17466f;outline:none;box-shadow:0 9px 24px rgba(6,75,155,.06)}
+    .faq-search-wrap input:focus{border-color:#79b9ed;box-shadow:0 0 0 4px rgba(8,121,216,.09)}
+    .faq-search-icon{position:absolute;left:18px;top:15px;font-size:19px;color:#6d94b7}
+    .faq-main{max-width:1160px;margin:0 auto;padding:54px 26px 90px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:54px;align-items:start}
+    .faq-sidebar{position:sticky;top:112px}
+    .faq-sidebar-label{font-size:10px;font-weight:800;letter-spacing:.16em;color:#91a8bc;margin:0 0 15px 12px}
+    .faq-nav{display:grid;gap:6px}
+    .faq-nav a{display:flex;align-items:center;gap:11px;padding:12px 13px;border-radius:7px;color:#54718e;font-size:12px;font-weight:700;transition:.2s}
+    .faq-nav a span{width:25px;height:25px;border-radius:6px;background:#edf6ff;display:grid;place-items:center;color:#3986c9;font-size:12px}
+    .faq-nav a:hover,.faq-nav a.active{background:#eaf5ff;color:#0755ad}
+    .faq-sidebar-card{margin-top:26px;padding:20px;border-radius:10px;background:#0755ad;color:#fff;box-shadow:0 12px 28px rgba(5,85,173,.14)}
+    .faq-sidebar-card strong{font:600 19px 'Playfair Display',serif;display:block;margin-bottom:8px}
+    .faq-sidebar-card p{font-size:11px;line-height:1.8;color:#dceeff;margin:0 0 15px}
+    .faq-sidebar-card a{font-size:11px;font-weight:800;color:#fff;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:4px}
+    .faq-content{min-width:0}
+    .faq-intro{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:32px;padding-bottom:22px;border-bottom:1px solid var(--faq-line)}
+    .faq-intro h2{font:600 30px/1.2 'Playfair Display',serif;color:var(--faq-ink);margin:0 0 8px}
+    .faq-intro p{font-size:12px;color:#7890a7;line-height:1.8;margin:0;max-width:560px}
+    .faq-count{white-space:nowrap;font-size:10px;font-weight:800;color:#4384bc;background:#edf7ff;padding:8px 11px;border-radius:30px}
+    .faq-group{margin:0 0 34px;scroll-margin-top:112px}
+    .faq-group-heading{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+    .faq-group-heading>span{width:34px;height:34px;border-radius:9px;background:#eaf5ff;color:#0879d8;display:grid;place-items:center;font-size:15px;font-weight:800}
+    .faq-group-heading h3{font:600 21px 'Playfair Display',serif;color:#0755ad;margin:0}
+    .faq-item{background:#fff;border:1px solid #e4edf5;border-radius:9px;margin:0 0 10px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+    .faq-item[open]{border-color:#c8e2f8;box-shadow:0 8px 24px rgba(5,72,145,.055)}
+    .faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 21px;color:#174b7c;font-size:13px;font-weight:800;line-height:1.6}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary:after{content:"+";flex:0 0 27px;width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#eef7ff;color:#0879d8;font-size:19px;font-weight:500}
+    .faq-item[open] summary:after{content:"−";background:#0879d8;color:#fff}
+    .faq-answer{padding:0 21px 22px;color:#617b93;font-size:13px;line-height:1.95}
+    .faq-answer p{margin:0 0 12px}.faq-answer p:last-child{margin-bottom:0}
+    .faq-answer ul,.faq-answer ol{padding-left:21px;margin:9px 0 14px}.faq-answer li{padding-left:4px;margin:5px 0}
+    .faq-answer strong{color:#244f77}.faq-answer a{color:#0879d8;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+    .faq-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0}
+    .faq-product{padding:13px 14px;border:1px solid #e7f0f7;border-radius:7px;background:#fbfdff}
+    .faq-product b{display:block;color:#1c527f;font-size:12px;margin-bottom:4px}.faq-product span{font-size:11px;color:#7790a5}
+    .faq-callout{margin:13px 0;padding:14px 16px;background:#f0f8ff;border-left:3px solid #1684d8;border-radius:0 7px 7px 0;color:#54728d;font-size:12px;line-height:1.85}
+    .faq-callout.warning{background:#fff8ed;border-left-color:#e2a34b}
+    .faq-empty{display:none;padding:25px;border:1px dashed #c8dceb;border-radius:8px;text-align:center;color:#6e8ba5;font-size:13px}
+    .faq-sources{margin-top:38px;padding:22px 24px;border:1px solid #e3edf6;border-radius:9px;background:#fff}
+    .faq-sources h3{font:600 19px 'Playfair Display',serif;color:#0755ad;margin:0 0 8px}.faq-sources p{font-size:11px;color:#8298ac;line-height:1.8;margin:0 0 9px}
+    .faq-sources ul{margin:0;padding-left:18px}.faq-sources li{font-size:11px;line-height:1.9;color:#69839b}.faq-sources a{color:#0879d8;text-decoration:underline}
+    .faq-bottom{margin-top:42px;padding:30px 32px;border-radius:12px;background:linear-gradient(110deg,#eaf5ff,#f5faff);display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .faq-bottom h3{font:600 25px 'Playfair Display',serif;color:#064b9b;margin:0 0 7px}.faq-bottom p{font-size:12px;line-height:1.8;color:#68839c;margin:0;max-width:510px}
+    .faq-bottom a{flex:0 0 auto;background:#0879d8;color:#fff;padding:13px 18px;border-radius:5px;font-size:11px;font-weight:800}
+    .faq-hidden{display:none!important}
+    @media(max-width:850px){.faq-main{grid-template-columns:1fr;gap:28px;padding-top:35px}.faq-sidebar{position:static}.faq-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.faq-sidebar-card{display:none}.faq-intro{margin-bottom:25px}}
+    @media(max-width:600px){.faq-hero{padding:52px 22px 45px}.faq-hero h1{font-size:39px}.faq-hero p{font-size:13px}.faq-main{padding:30px 18px 60px}.faq-nav{grid-template-columns:1fr 1fr;gap:5px}.faq-nav a{font-size:10px;padding:9px 8px;gap:7px}.faq-nav a span{width:22px;height:22px;flex:0 0 22px}.faq-intro{display:block}.faq-intro h2{font-size:26px}.faq-count{display:inline-block;margin-top:12px}.faq-group-heading h3{font-size:19px}.faq-item summary{padding:16px;font-size:12px}.faq-answer{padding:0 16px 18px;font-size:12px}.faq-product-grid{grid-template-columns:1fr}.faq-bottom{display:block;padding:24px}.faq-bottom a{display:inline-block;margin-top:18px}.faq-sources{padding:18px}}
   </style>
 </head>
 <body>
   <div class="announcement">YoooMILK · Một giọt tươi – Một ngày lành</div>
   <header class="site-header">
-    <a class="brand" href="index.html#home" aria-label="YoooMILK - Trang chủ">
-      <img src="assets/logo-yooomilk.webp" alt="Logo YoooMILK" width="68" height="68" style="width:68px;height:68px;object-fit:contain">
-    </a>
+    <a class="brand" href="index.html#home" aria-label="YoooMILK - Trang chủ"><img src="assets/logo-yooomilk.webp" alt="Logo YoooMILK" width="68" height="68" style="width:68px;height:68px;object-fit:contain"></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">☰</button>
     <nav class="main-nav" id="mainNav">
-      <a href="index.html#home">Trang chủ</a>
-      <a href="index.html#products">Sản phẩm</a>
-      <a href="index.html#promotion">Khám phá</a>
-      <a href="faq.html" aria-current="page">Câu hỏi thường gặp</a>
-      <a href="story.html">Câu chuyện YoooMILK</a>
-      <a href="index.html#contact">Liên hệ</a>
+      <a href="index.html#home">Trang chủ</a><a href="index.html#products">Sản phẩm</a><a href="index.html#promotion">Khám phá</a><a href="faq.html" aria-current="page">Câu hỏi thường gặp</a><a href="story.html">Câu chuyện YoooMILK</a><a href="index.html#contact">Liên hệ</a>
     </nav>
+    <div class="header-actions"><a class="cart-trigger" href="index.html#products">Khám phá sản phẩm</a></div>
   </header>
 
-  <section class="faq-page-hero">
-    <span class="eyebrow">YOOOMILK SUPPORT</span>
-    <h1>Câu hỏi thường gặp</h1>
-    <p>Tổng hợp những thông tin giúp bạn tìm hiểu sản phẩm, thao tác trên website và nắm rõ cách thức đặt hàng tại YoooMILK.</p>
+  <section class="faq-hero">
+    <div class="faq-hero-inner">
+      <span class="faq-kicker">YOOOMILK CUSTOMER CARE</span>
+      <h1>Chọn đúng sản phẩm.<br><em>Hiểu rõ từng trải nghiệm.</em></h1>
+      <p>Những thông tin bạn cần trước và sau khi chọn mua tại YoooMILK — từ tìm hiểu các dòng sản phẩm, đọc nhãn, bảo quản đến thao tác trên website.</p>
+      <div class="faq-search-wrap"><span class="faq-search-icon">⌕</span><input id="faqSearch" type="search" placeholder="Bạn đang cần tìm thông tin gì? Ví dụ: bảo quản, giỏ hàng..." aria-label="Tìm kiếm câu hỏi thường gặp"></div>
+    </div>
   </section>
 
-  <main class="faq-page-main">
-    <a class="faq-back" href="index.html#faq">← Quay lại mục câu hỏi thường gặp</a>
+  <main class="faq-main">
+    <aside class="faq-sidebar">
+      <p class="faq-sidebar-label">DANH MỤC HỖ TRỢ</p>
+      <nav class="faq-nav" aria-label="Danh mục câu hỏi">
+        <a href="#products" class="active"><span>01</span> Sản phẩm YoooMILK</a>
+        <a href="#choosing"><span>02</span> Tìm hiểu & lựa chọn</a>
+        <a href="#quality"><span>03</span> Thành phần & bảo quản</a>
+        <a href="#shopping"><span>04</span> Giỏ hàng & đặt hàng</a>
+      </nav>
+      <div class="faq-sidebar-card"><strong>Cần hỗ trợ thêm?</strong><p>Hãy gửi câu hỏi cho YoooMILK qua khu vực liên hệ. Đội ngũ sẽ tiếp nhận thông tin bạn cần tìm hiểu.</p><a href="index.html#contact">LIÊN HỆ YOOOMILK →</a></div>
+    </aside>
 
-    <article class="faq-detail" id="faq-products">
-      <h2>1. YoooMILK hiện có những dòng sản phẩm nào?</h2>
-      <p>Website YoooMILK hiện giới thiệu 5 sản phẩm thuộc các nhóm thức uống từ sữa dê, sữa hạt và sữa chua:</p>
-      <ul>
-        <li>Sữa dê tươi nguyên chất YoooMILK – quy cách 1L.</li>
-        <li>Sữa dê tươi ít đường YoooMILK – quy cách 1L.</li>
-        <li>Sữa dê Organic YoooMILK – quy cách 1L.</li>
-        <li>Sữa hạt hạnh nhân YoooMILK – quy cách 1L.</li>
-        <li>Sữa chua YoooMILK – lốc 4 hộp.</li>
-      </ul>
-      <p>Danh mục và giá hiển thị có thể được cập nhật theo phiên bản website. Bạn nên truy cập mục <a href="index.html#products">Sản phẩm</a> để xem thông tin đang được giới thiệu.</p>
-    </article>
+    <div class="faq-content">
+      <div class="faq-intro"><div><h2>Giải đáp thắc mắc</h2><p>Chọn từng câu hỏi để xem hướng dẫn chi tiết. Bạn cũng có thể nhập từ khóa vào ô tìm kiếm để lọc nội dung nhanh hơn.</p></div><span class="faq-count" id="faqCount">09 CÂU HỎI</span></div>
+      <div class="faq-empty" id="faqEmpty">Không tìm thấy nội dung phù hợp. Hãy thử một từ khóa khác hoặc liên hệ với YoooMILK.</div>
 
-    <article class="faq-detail" id="faq-details">
-      <h2>2. Làm thế nào để xem thông tin chi tiết sản phẩm?</h2>
-      <ol>
-        <li>Truy cập khu vực <a href="index.html#products">Sản phẩm</a> trên trang chủ.</li>
-        <li>Chọn hình ảnh, tên sản phẩm hoặc nút xem chi tiết tương ứng.</li>
-        <li>Trang chi tiết hiển thị mô tả, giá bán, quy cách, điểm nổi bật, cách sử dụng và thông tin tham khảo.</li>
-      </ol>
-      <p>Trước khi lựa chọn, bạn nên đọc kỹ mô tả và đối chiếu các thông tin quan trọng với nhãn sản phẩm thực tế.</p>
-    </article>
+      <section class="faq-group" id="products" data-group="products">
+        <div class="faq-group-heading"><span>01</span><h3>Sản phẩm YoooMILK</h3></div>
+        <details class="faq-item" open><summary>YoooMILK hiện đang giới thiệu những dòng sản phẩm nào?</summary><div class="faq-answer"><p>Danh mục trên website hiện giới thiệu 5 sản phẩm, được chia thành ba nhóm chính: sản phẩm từ sữa dê, thức uống từ hạt và sữa chua. Mỗi sản phẩm có hương vị, định dạng và mức giá riêng để khách hàng tham khảo.</p><div class="faq-product-grid"><div class="faq-product"><b>Sữa dê tươi nguyên chất</b><span>Quy cách 1L · Giá hiển thị 69.000đ</span></div><div class="faq-product"><b>Sữa dê tươi ít đường</b><span>Quy cách 1L · Giá hiển thị 72.000đ</span></div><div class="faq-product"><b>Sữa dê Organic</b><span>Quy cách 1L · Giá hiển thị 79.000đ</span></div><div class="faq-product"><b>Sữa hạt hạnh nhân</b><span>Quy cách 1L · Giá hiển thị 59.000đ</span></div><div class="faq-product"><b>Sữa chua YoooMILK</b><span>Lốc 4 hộp · Giá hiển thị 49.000đ</span></div></div><p>Giá trên là mức đang được thiết lập trong phiên bản website tại thời điểm cập nhật nội dung FAQ; vui lòng đối chiếu với giá hiển thị ở trang sản phẩm trước khi lựa chọn.</p><p><a href="index.html#products">Xem danh mục sản phẩm →</a></p></div></details>
+        <details class="faq-item"><summary>Sữa dê nguyên chất, ít đường và Organic khác nhau như thế nào?</summary><div class="faq-answer"><p>Ba tên gọi thể hiện ba định hướng lựa chọn khác nhau trong danh mục YoooMILK:</p><ul><li><strong>Sữa dê tươi nguyên chất:</strong> hướng đến người muốn khám phá hương vị đặc trưng của sữa dê, không nhấn mạnh vị ngọt bổ sung.</li><li><strong>Sữa dê tươi ít đường:</strong> dành cho người yêu thích sữa dê nhưng ưu tiên trải nghiệm vị ngọt nhẹ hơn. “Ít đường” không đồng nghĩa với không đường; hãy xem bảng thành phần và hàm lượng đường trên nhãn để biết con số chính xác.</li><li><strong>Sữa dê Organic:</strong> là dòng được giới thiệu theo định hướng Organic. Khi cần xác minh tiêu chuẩn, vùng nguyên liệu hoặc chứng nhận, cần kiểm tra thông tin và chứng từ cụ thể của sản phẩm.</li></ul><p>Khác biệt chính xác về công thức, tỷ lệ nguyên liệu và dinh dưỡng phải căn cứ vào nhãn hàng hóa do nhà sản xuất công bố, không chỉ dựa trên tên dòng sản phẩm.</p></div></details>
+      </section>
 
-    <article class="faq-detail" id="faq-cart">
-      <h2>3. Làm thế nào để thêm sản phẩm vào giỏ hàng?</h2>
-      <ol>
-        <li>Chọn sản phẩm bạn muốn mua tại trang chủ hoặc trang chi tiết.</li>
-        <li>Nếu đang ở trang chi tiết, sử dụng nút tăng/giảm để chọn số lượng mong muốn.</li>
-        <li>Nhấn “Thêm vào giỏ hàng”. Website sẽ lưu lựa chọn vào giỏ hàng trên trình duyệt hiện tại.</li>
-        <li>Mở mục “Giỏ hàng” để kiểm tra sản phẩm, thay đổi số lượng hoặc xóa sản phẩm không còn nhu cầu.</li>
-      </ol>
-      <div class="faq-note">Lưu ý: Giỏ hàng được lưu trên trình duyệt và thiết bị đang sử dụng. Việc xóa dữ liệu trình duyệt hoặc đổi thiết bị có thể khiến giỏ hàng không còn được giữ lại.</div>
-    </article>
+      <section class="faq-group" id="choosing" data-group="choosing">
+        <div class="faq-group-heading"><span>02</span><h3>Tìm hiểu & lựa chọn sản phẩm</h3></div>
+        <details class="faq-item"><summary>Làm thế nào để xem đầy đủ thông tin của một sản phẩm?</summary><div class="faq-answer"><p>Bạn có thể truy cập trang chủ, kéo đến khu vực <a href="index.html#products">Sản phẩm</a> và chọn sản phẩm muốn tìm hiểu. Nhấn vào hình ảnh, tên sản phẩm hoặc nút xem chi tiết (tùy cách hiển thị trên thiết bị) để mở trang thông tin riêng.</p><p>Ở trang chi tiết, hãy đọc lần lượt các nội dung: mô tả sản phẩm, quy cách, giá đang hiển thị, điểm nổi bật, hướng dẫn sử dụng và lưu ý bảo quản. Trước khi quyết định mua, nên kiểm tra kỹ các thông tin liên quan đến thành phần, dị ứng, hạn sử dụng và điều kiện bảo quản trên bao bì thực tế.</p></div></details>
+        <details class="faq-item"><summary>Sữa dê có phù hợp với người dị ứng đạm sữa bò hoặc không dung nạp lactose không?</summary><div class="faq-answer"><p><strong>Không nên mặc định sữa dê là lựa chọn thay thế an toàn cho người dị ứng đạm sữa bò.</strong> Protein trong sữa dê và sữa bò có mức độ tương đồng; người dị ứng sữa bò có thể phản ứng với sữa dê. Tổ chức Dị ứng và Miễn dịch lâm sàng Australasia (ASCIA) khuyến cáo sữa dê không phù hợp với người bị dị ứng sữa bò nếu chưa có đánh giá chuyên môn.</p><p>Không dung nạp lactose là vấn đề khác với dị ứng protein sữa. Sữa dê tự nhiên vẫn có lactose, vì vậy người không dung nạp lactose có thể gặp triệu chứng tùy mức độ nhạy cảm và lượng sử dụng.</p><div class="faq-callout warning">Nếu bạn hoặc người thân có tiền sử dị ứng sữa, đang theo chế độ ăn điều trị hoặc chưa rõ khả năng dung nạp, hãy hỏi bác sĩ/chuyên gia dinh dưỡng trước khi sử dụng. Không dùng sản phẩm để tự thử phản ứng dị ứng.</div></div></details>
+      </section>
 
-    <article class="faq-detail" id="faq-ingredients">
-      <h2>4. Thông tin thành phần và dinh dưỡng được xem ở đâu?</h2>
-      <p>Bạn có thể tham khảo mục thông tin sản phẩm trên website để biết nội dung giới thiệu. Tuy nhiên, khi cần xác định chính xác thành phần, hàm lượng dinh dưỡng, chất gây dị ứng, hạn sử dụng, điều kiện bảo quản hoặc chứng nhận, hãy ưu tiên:</p>
-      <ul>
-        <li>Bảng thành phần và bảng giá trị dinh dưỡng được in trên bao bì.</li>
-        <li>Hướng dẫn sử dụng và bảo quản do nhà sản xuất công bố.</li>
-        <li>Hồ sơ hoặc chứng nhận hợp lệ được cung cấp cho sản phẩm, nếu có.</li>
-      </ul>
-      <div class="faq-note">Không nên suy luận rằng các sản phẩm có cùng nhóm nguyên liệu sẽ có thành phần hoặc giá trị dinh dưỡng giống nhau. Với thông tin Organic, hãy kiểm tra chứng nhận và đơn vị cấp chứng nhận thực tế.</div>
-    </article>
+      <section class="faq-group" id="quality" data-group="quality">
+        <div class="faq-group-heading"><span>03</span><h3>Thành phần, dinh dưỡng & bảo quản</h3></div>
+        <details class="faq-item"><summary>Tôi có thể xem thành phần và giá trị dinh dưỡng chính xác ở đâu?</summary><div class="faq-answer"><p>Thông tin giới thiệu trên website giúp bạn nhận biết đặc điểm và định hướng của từng sản phẩm. Tuy nhiên, để tra cứu chính xác, hãy ưu tiên nhãn bao bì của đúng sản phẩm và đúng phiên bản đang sử dụng, đặc biệt với các nội dung sau:</p><ul><li>Danh sách thành phần và thứ tự thành phần theo công bố.</li><li>Bảng giá trị dinh dưỡng: năng lượng, protein, chất béo, carbohydrate, đường và các chỉ tiêu khác (nếu có).</li><li>Thông tin chất gây dị ứng hoặc cảnh báo dành cho người có chế độ ăn đặc biệt.</li><li>Khối lượng/thể tích thực, ngày sản xuất, hạn sử dụng và hướng dẫn bảo quản.</li></ul><p>Website hiện chưa cung cấp bộ số liệu dinh dưỡng được xác minh cho toàn bộ sản phẩm. Vì vậy, YoooMILK không đưa ra con số ước đoán thay cho thông tin trên nhãn.</p></div></details>
+        <details class="faq-item"><summary>Sản phẩm mang tên Organic có chứng nhận hữu cơ không?</summary><div class="faq-answer"><p>Tên gọi “Organic” trên trang giới thiệu là thông tin nhận diện dòng sản phẩm, nhưng bản thân tên gọi chưa đủ để xác nhận tiêu chuẩn hoặc chứng nhận hữu cơ. Để kiểm chứng, người mua nên xem bao bì và hồ sơ công bố, bao gồm tên tiêu chuẩn áp dụng, tổ chức chứng nhận, phạm vi chứng nhận và thời hạn hiệu lực (nếu được công bố).</p><div class="faq-callout">YoooMILK khuyến nghị khách hàng chỉ căn cứ vào chứng nhận/hồ sơ hợp lệ do đơn vị có thẩm quyền cấp hoặc xác nhận. Không nên suy luận rằng toàn bộ nguyên liệu, quy trình hay sản phẩm đã được chứng nhận nếu chưa có tài liệu chứng minh.</div></div></details>
+        <details class="faq-item"><summary>Sau khi mở hộp, nên bảo quản sữa như thế nào?</summary><div class="faq-answer"><p>Cách bảo quản phụ thuộc vào công nghệ xử lý, loại sản phẩm và hướng dẫn của nhà sản xuất. Bạn nên đọc kỹ dòng hướng dẫn trên bao bì thay vì áp dụng một thời hạn dùng chung cho mọi loại sữa.</p><ul><li>Với sản phẩm yêu cầu bảo quản lạnh, giữ sản phẩm trong ngăn mát theo nhiệt độ được nhà sản xuất hướng dẫn và hạn chế để ở nhiệt độ phòng kéo dài.</li><li>Với sản phẩm tiệt trùng UHT có thể bảo quản ở nhiệt độ thường khi chưa mở, sau khi mở hộp cần đậy kín và bảo quản lạnh theo hướng dẫn trên nhãn.</li><li>Không sử dụng sản phẩm khi bao bì phồng, rò rỉ, có dấu hiệu bất thường hoặc đã quá hạn sử dụng.</li><li>Dùng dụng cụ sạch khi rót, tránh để miệng hộp tiếp xúc trực tiếp với tay hoặc vật dụng không sạch.</li></ul><p>FDA lưu ý sữa và sản phẩm từ sữa cần được bảo quản lạnh để hạn chế vi sinh vật phát triển; sữa UHT sau khi mở cũng cần được làm lạnh. Hướng dẫn cụ thể trên bao bì vẫn là căn cứ ưu tiên.</p></div></details>
+      </section>
 
-    <article class="faq-detail" id="faq-order">
-      <h2>5. Đặt hàng trên website hiện được xử lý như thế nào?</h2>
-      <ol>
-        <li>Thêm sản phẩm vào giỏ hàng và kiểm tra số lượng, tổng tiền.</li>
-        <li>Tiếp tục đến biểu mẫu đặt hàng nếu chức năng này được hiển thị.</li>
-        <li>Điền họ tên, số điện thoại, địa chỉ nhận hàng và thông tin được yêu cầu.</li>
-        <li>Chọn phương thức thanh toán mô phỏng và xác nhận theo hướng dẫn trên trang.</li>
-      </ol>
-      <div class="faq-note">Quan trọng: Phiên bản website hiện tại phục vụ mục đích giới thiệu và mô phỏng thao tác đặt hàng. Chức năng xác nhận trên trình duyệt không đồng nghĩa đơn hàng đã được gửi đến hệ thống bán hàng thực tế; các phương thức thanh toán điện tử cũng chưa xử lý giao dịch thật.</div>
-    </article>
+      <section class="faq-group" id="shopping" data-group="shopping">
+        <div class="faq-group-heading"><span>04</span><h3>Giỏ hàng & đặt hàng trên website</h3></div>
+        <details class="faq-item"><summary>Làm thế nào để thêm sản phẩm vào giỏ hàng và thay đổi số lượng?</summary><div class="faq-answer"><ol><li>Vào khu vực <a href="index.html#products">Sản phẩm</a> hoặc mở trang chi tiết của sản phẩm cần mua.</li><li>Chọn số lượng mong muốn bằng nút tăng/giảm (nếu đang ở trang chi tiết).</li><li>Nhấn <strong>Thêm vào giỏ hàng</strong>. Website sẽ cập nhật số lượng sản phẩm trong biểu tượng giỏ hàng.</li><li>Mở giỏ hàng để rà soát tên sản phẩm, số lượng và tổng tiền; sử dụng nút tăng/giảm hoặc xóa để điều chỉnh lựa chọn trước khi tiếp tục.</li></ol><p>Nếu số lượng hoặc tổng tiền chưa thay đổi như mong muốn, hãy tải lại trang và kiểm tra lại giỏ hàng trước khi tiếp tục thao tác.</p><div class="faq-callout">Lưu ý kỹ thuật: phiên bản website hiện lưu giỏ hàng trong bộ nhớ cục bộ của trình duyệt (local storage). Vì vậy, dữ liệu có thể không đồng bộ giữa các trình duyệt hoặc thiết bị khác nhau; việc xóa dữ liệu trình duyệt cũng có thể làm mất giỏ hàng đã lưu.</div></div></details>
+        <details class="faq-item"><summary>Thao tác xác nhận đặt hàng trên website có tạo đơn hàng thật không?</summary><div class="faq-answer"><p>Ở phiên bản website hiện tại, chức năng giỏ hàng và biểu mẫu đặt hàng được xây dựng để trình diễn trải nghiệm mua sắm và mô phỏng các bước nhập thông tin. Website chưa kết nối với hệ thống quản lý đơn hàng, cổng thanh toán hoặc đơn vị vận chuyển thực tế.</p><p>Do đó, thao tác nhấn xác nhận trên website <strong>không đồng nghĩa đơn hàng đã được tiếp nhận, xác nhận hoặc chuyển đi giao</strong>. Các lựa chọn thanh toán hiển thị (nếu có) cũng không thực hiện giao dịch tiền thật.</p><div class="faq-callout warning">Không nhập thông tin thẻ ngân hàng, mật khẩu, mã OTP hoặc dữ liệu thanh toán nhạy cảm vào biểu mẫu mô phỏng. Nếu cần xác nhận khả năng mua hàng thực tế, hãy liên hệ trực tiếp qua <a href="index.html#contact">khu vực liên hệ</a>.</div></div></details>
+      </section>
 
-    <section class="faq-page-contact">
-      <h2>Bạn vẫn còn câu hỏi?</h2>
-      <p>Hãy quay lại trang chủ và sử dụng khu vực liên hệ để gửi nội dung cần tư vấn.</p>
-      <a href="index.html#contact">Đến mục liên hệ YoooMILK →</a>
-    </section>
+      <section class="faq-sources"><h3>Cơ sở thông tin tham khảo</h3><p>Một số nội dung về an toàn thực phẩm và dị ứng được diễn giải từ tài liệu của cơ quan/chuyên gia y tế quốc tế. Đây là thông tin tham khảo chung, không thay thế nhãn sản phẩm YoooMILK hoặc tư vấn y tế cá nhân.</p><ul><li><a href="https://www.allergy.org.au/patients/food-allergy/cows-milk-dairy-allergy" target="_blank" rel="noopener">ASCIA – Cow’s Milk (Dairy) Allergy</a>: thông tin về dị ứng sữa bò và nguy cơ phản ứng chéo với sữa dê.</li><li><a href="https://www.nhs.uk/Live-well/eat-well/food-types/milk-and-dairy-nutrition/" target="_blank" rel="noopener">NHS – Milk and dairy nutrition</a>: phân biệt không dung nạp lactose và dị ứng sữa.</li><li><a href="https://www.fda.gov/food/buy-store-serve-safe-food/raw-milk-misconceptions-and-danger-raw-milk-consumption" target="_blank" rel="noopener">U.S. FDA – Raw Milk Misconceptions and the Danger of Raw Milk Consumption</a>: thông tin về thanh trùng và bảo quản an toàn sữa.</li></ul></section>
+
+      <section class="faq-bottom"><div><h3>Chưa tìm thấy điều bạn cần?</h3><p>Gửi câu hỏi cụ thể về sản phẩm, thành phần hoặc thao tác trên website. Bạn cũng có thể quay lại danh mục để tiếp tục khám phá các lựa chọn của YoooMILK.</p></div><a href="index.html#contact">LIÊN HỆ YOOOMILK →</a></section>
+    </div>
   </main>
 
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    if (menuToggle && mainNav) {
-      menuToggle.addEventListener('click', () => {
-        const opened = mainNav.classList.toggle('open');
-        menuToggle.setAttribute('aria-expanded', String(opened));
-        menuToggle.setAttribute('aria-label', opened ? 'Đóng menu' : 'Mở menu');
-      });
-    }
+    const menuToggle=document.getElementById('menuToggle');
+    const mainNav=document.getElementById('mainNav');
+    if(menuToggle&&mainNav){menuToggle.addEventListener('click',()=>{const opened=mainNav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(opened));menuToggle.setAttribute('aria-label',opened?'Đóng menu':'Mở menu');});}
+    const faqSearch=document.getElementById('faqSearch');
+    const faqItems=[...document.querySelectorAll('.faq-item')];
+    const faqGroups=[...document.querySelectorAll('.faq-group')];
+    const faqEmpty=document.getElementById('faqEmpty');
+    const faqCount=document.getElementById('faqCount');
+    faqSearch.addEventListener('input',()=>{
+      const term=faqSearch.value.trim().toLocaleLowerCase('vi');let visible=0;
+      faqItems.forEach(item=>{const match=!term||item.innerText.toLocaleLowerCase('vi').includes(term);item.classList.toggle('faq-hidden',!match);if(match)visible++;});
+      faqGroups.forEach(group=>{const hasVisible=[...group.querySelectorAll('.faq-item')].some(item=>!item.classList.contains('faq-hidden'));group.classList.toggle('faq-hidden',!hasVisible);});
+      faqEmpty.style.display=visible?'none':'block';faqCount.textContent=String(visible).padStart(2,'0')+' CÂU HỎI';
+    });
+    document.querySelectorAll('.faq-nav a').forEach(link=>link.addEventListener('click',()=>{document.querySelectorAll('.faq-nav a').forEach(item=>item.classList.remove('active'));link.classList.add('active');}));
   </script>
 </body>
 </html>
