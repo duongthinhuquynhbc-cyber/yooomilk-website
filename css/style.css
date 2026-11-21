@@ -1726,3 +1726,556 @@ main { overflow: hidden; }
     transition-duration: .01ms !important;
   }
 }
+
+/* ==================================================
+   YOOOMILK - READABILITY & RESPONSIVE FIX
+   Dán đoạn này vào CUỐI FILE css/style.css
+================================================== */
+
+/* 1. Tăng khả năng đọc nội dung */
+body {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.announcement {
+  font-size: 10px;
+}
+
+.main-nav a {
+  font-size: 13px;
+}
+
+.header-actions button {
+  font-size: 13px;
+}
+
+.eyebrow {
+  font-size: 11px;
+}
+
+.hero-copy p,
+.section-heading > p,
+.story-copy p,
+.contact-section > div > p,
+.promo-content p {
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.hero-note b,
+.promise-strip b {
+  font-size: 13px;
+}
+
+.hero-note small,
+.promise-strip small {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.btn,
+.text-link {
+  font-size: 13px;
+}
+
+.category-card span {
+  font-size: 10px;
+}
+
+.category-card h3 {
+  font-size: 27px;
+}
+
+.category-card b {
+  font-size: 12px;
+}
+
+/* 2. Khu vực sản phẩm */
+.filter-btn {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+
+.search-box input {
+  font-size: 13px;
+}
+
+.product-info h3 {
+  font-size: 19px;
+}
+
+.product-info p {
+  font-size: 13px;
+  line-height: 1.75;
+  min-height: 90px;
+}
+
+.product-bottom > b {
+  font-size: 16px;
+}
+
+.add-btn {
+  font-size: 12px;
+  padding: 11px 14px;
+}
+
+/* 3. FAQ */
+.faq-label,
+.faq-topline {
+  font-size: 10px;
+}
+
+.faq-intro-text {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.faq-support-note strong {
+  font-size: 14px;
+}
+
+.faq-support-note p {
+  font-size: 13px;
+}
+
+.faq-support-note a,
+.faq-all-link {
+  font-size: 12px;
+}
+
+.faq-question {
+  font-size: 14px;
+}
+
+.faq-answer p {
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.faq-answer a,
+.faq-view-all {
+  font-size: 12px;
+}
+
+/* 4. Các khu vực nội dung khác */
+.values h3 {
+  font-size: 23px;
+}
+
+.values p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.contact-form label {
+  font-size: 13px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 14px;
+}
+
+.contact-form small {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.footer-main p,
+.footer-main a {
+  font-size: 13px;
+}
+
+.footer-main h3 {
+  font-size: 15px;
+}
+
+.footer-bottom {
+  font-size: 11px;
+}
+
+/* 5. Giới hạn hình ảnh, tránh tràn khung */
+.hero-art > img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.category-art img,
+.product-image img,
+.promo-decoration img,
+.story-image img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* 6. TABLET */
+@media (max-width: 1000px) {
+  .main-nav a {
+    font-size: 11px;
+  }
+
+  .hero-copy p,
+  .section-heading > p,
+  .story-copy p,
+  .contact-section > div > p {
+    font-size: 14px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 7. MOBILE */
+@media (max-width: 720px) {
+  body {
+    font-size: 15px;
+  }
+
+  .announcement {
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+  }
+
+  .cart-trigger {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 42px 20px 20px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(34px, 9vw, 43px);
+    line-height: 1.17;
+  }
+
+  .hero-copy p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .hero-note b {
+    font-size: 13px;
+  }
+
+  .hero-note small {
+    font-size: 11px;
+  }
+
+  .hero-art {
+    min-height: 260px;
+    overflow: hidden;
+  }
+
+  .hero-blob {
+    width: min(70vw, 270px);
+    height: min(70vw, 270px);
+  }
+
+  .hero-art > img {
+    width: 85%;
+    height: 260px;
+    max-height: 260px;
+  }
+
+  .floating-tag {
+    width: 54px;
+    height: 54px;
+    font-size: 8px;
+  }
+
+  .promise-strip {
+    gap: 17px 12px;
+    padding: 20px 17px;
+  }
+
+  .promise-strip b {
+    font-size: 11px;
+  }
+
+  .promise-strip small {
+    font-size: 10px;
+  }
+
+  .section {
+    padding: 55px 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 31px;
+    line-height: 1.25;
+  }
+
+  .section-heading > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .category-card {
+    min-height: 160px;
+    padding: 15px;
+  }
+
+  .category-card h3 {
+    font-size: 23px;
+  }
+
+  .category-card span {
+    font-size: 9px;
+  }
+
+  .category-art {
+    width: 45%;
+    height: 135px;
+  }
+
+  .product-toolbar {
+    gap: 14px;
+  }
+
+  .filters {
+    gap: 7px;
+  }
+
+  .filter-btn {
+    font-size: 11px;
+    padding: 9px 13px;
+  }
+
+  .search-box input {
+    font-size: 14px;
+  }
+
+  .product-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .product-image {
+    height: 250px;
+  }
+
+  .product-image img {
+    width: 82%;
+    height: 88%;
+  }
+
+  .product-info {
+    padding: 17px;
+  }
+
+  .product-info h3 {
+    font-size: 19px;
+  }
+
+  .product-info p {
+    min-height: 0;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .product-bottom > b {
+    font-size: 15px;
+  }
+
+  .add-btn {
+    font-size: 11px;
+    padding: 10px 12px;
+  }
+
+  .promo {
+    padding: 32px 20px;
+  }
+
+  .promo-content h2 {
+    font-size: 34px;
+  }
+
+  .promo-content p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .promo-decoration img {
+    height: 190px;
+  }
+
+  .story-image {
+    min-height: 260px;
+  }
+
+  .story-image img {
+    height: 240px;
+  }
+
+  .story-copy h2,
+  .contact-section h2 {
+    font-size: 34px;
+  }
+
+  .story-copy p,
+  .contact-section > div > p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .values {
+    padding: 32px 22px;
+  }
+
+  .values h3 {
+    font-size: 21px;
+  }
+
+  .values p {
+    font-size: 13px;
+  }
+
+  /* FAQ trên điện thoại */
+  .faq-modern {
+    padding: 55px 18px;
+  }
+
+  .faq-modern-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .faq-modern-intro h2 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .faq-intro-text {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .faq-support-note {
+    padding: 15px;
+  }
+
+  .faq-support-note strong {
+    font-size: 13px;
+  }
+
+  .faq-support-note p {
+    font-size: 12px;
+  }
+
+  .faq-question {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .faq-modern-item summary {
+    min-height: 68px;
+    gap: 9px;
+    padding: 12px 0;
+  }
+
+  .faq-index {
+    flex-basis: 22px;
+    font-size: 14px;
+  }
+
+  .faq-toggle {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .faq-answer {
+    padding: 0 8px 18px 31px;
+  }
+
+  .faq-answer p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .faq-answer a {
+    font-size: 12px;
+  }
+
+  .faq-view-all {
+    font-size: 12px;
+  }
+
+  .contact-section {
+    padding: 55px 18px;
+  }
+
+  .contact-form {
+    padding: 18px;
+  }
+
+  .contact-form label {
+    font-size: 13px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 35px 18px 75px;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 15px;
+  }
+
+  .footer-main h3 {
+    font-size: 14px;
+  }
+
+  .footer-main p,
+  .footer-main a {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 10px;
+  }
+}
+
+/* 8. MÀN HÌNH ĐIỆN THOẠI NHỎ */
+@media (max-width: 390px) {
+  .hero-copy h1 {
+    font-size: 33px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .product-image {
+    height: 225px;
+  }
+
+  .product-bottom {
+    flex-wrap: wrap;
+  }
+
+  .faq-modern-intro h2 {
+    font-size: 31px;
+  }
+
+  .faq-question {
+    font-size: 12px;
+  }
+}
