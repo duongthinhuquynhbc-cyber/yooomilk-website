@@ -1,594 +1,1728 @@
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sữa Dê Tươi YoooMILK – Một Giọt Tươi, Một Ngày Lành</title>
-  <meta name="description" content="Khám phá các sản phẩm từ sữa dê, sữa hạt hạnh nhân và sữa chua YoooMILK. Xem thông tin, quy cách và giá bán để lựa chọn sản phẩm phù hợp.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/">
-  <link rel="icon" href="assets/logo-yooomilk.webp" type="image/png">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Sữa Dê Tươi YoooMILK – Một Giọt Tươi, Một Ngày Lành">
-  <meta property="og:description" content="Khám phá các dòng sữa dê tươi, sữa hạt hạnh nhân và sữa chua YoooMILK.">
-  <meta property="og:url" content="https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/">
-  <meta property="og:site_name" content="YoooMILK">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:image" content="https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/assets/sua-de-nguyen-chat.webp">
-  <meta property="og:image:alt" content="Sản phẩm sữa dê tươi nguyên chất YoooMILK">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sữa Dê Tươi YoooMILK – Một Giọt Tươi, Một Ngày Lành">
-  <meta name="twitter:description" content="Khám phá sữa dê tươi, sữa hạt hạnh nhân và sữa chua YoooMILK.">
-  <meta name="twitter:image" content="https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/assets/sua-de-nguyen-chat.webp">
+/* =========================================
+   YOOOMILK WEBSITE - MAIN STYLESHEET
+========================================= */
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "YoooMILK",
-    "url": "https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/",
-    "inLanguage": "vi-VN",
-    "description": "Website giới thiệu các dòng sữa dê tươi, sữa hạt hạnh nhân và sữa chua YoooMILK."
+:root {
+  --blue: #07549a;
+  --blue-dark: #063f76;
+  --blue-mid: #1675b9;
+  --blue-light: #eaf4fb;
+  --ink: #173c59;
+  --muted: #71869a;
+  --line: #e2ebf2;
+  --cream: #fbfcfd;
+  --green: #edf5ee;
+  --shadow: 0 18px 45px rgba(20,68,105,.10);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #8cc8f1;
+  outline-offset: 3px;
+}
+
+/* ANNOUNCEMENT & HEADER */
+
+.announcement {
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  background: #edf6fc;
+  color: #326b96;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.site-header {
+  height: 82px;
+  padding: 0 clamp(22px,6vw,90px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand img {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px,2.1vw,30px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-nav a {
+  font-size: 11px;
+  font-weight: 700;
+  color: #526d83;
+  white-space: nowrap;
+  transition: color .2s;
+}
+
+.main-nav a:hover { color: var(--blue-mid); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--blue);
+  font-size: 23px;
+}
+
+.cart-trigger {
+  border: 0;
+  border-radius: 30px;
+  background: var(--blue);
+  color: #fff;
+  padding: 11px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cart-trigger span {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 3px 7px;
+  border-radius: 20px;
+  background: #fff;
+  color: var(--blue);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  color: var(--blue);
+  font-size: 25px;
+}
+
+main { overflow: hidden; }
+
+.eyebrow {
+  display: inline-block;
+  color: #3782b4;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 570px;
+  padding: 70px clamp(25px,8vw,125px);
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 5%;
+  background: linear-gradient(115deg,#f5faff 0%,#edf7fc 55%,#f4f8f1 100%);
+}
+
+.hero-copy { max-width: 590px; }
+
+.hero-copy h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(39px,4.8vw,64px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  color: #104c83;
+  margin: 17px 0 22px;
+  font-weight: 700;
+}
+
+.hero-copy p {
+  max-width: 530px;
+  color: #687f92;
+  font-size: 13px;
+  line-height: 2;
+  margin: 0;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 21px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: all .2s;
+}
+
+.btn-primary { background: var(--blue); color: #fff; }
+
+.btn-primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+.text-link {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  border-bottom: 1px solid #9dbbd3;
+  padding-bottom: 5px;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.note-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #dceef8;
+  color: #287bb0;
+  font-size: 20px;
+}
+
+.hero-note b, .hero-note small { display: block; }
+.hero-note b { font-size: 11px; color: #285875; }
+
+.hero-note small {
+  margin-top: 4px;
+  color: #8497a6;
+  font-size: 10px;
+}
+
+.hero-art {
+  min-height: 400px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.hero-blob {
+  position: absolute;
+  width: min(39vw,420px);
+  height: min(39vw,420px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%,#fff 0,#deeff8 62%,#c9e3f1 100%);
+}
+
+.hero-art > img {
+  position: relative;
+  z-index: 1;
+  width: min(86%,450px);
+  height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 25px rgba(36,83,112,.16));
+  animation: yooFloat 5s ease-in-out infinite;
+}
+
+.floating-tag {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff;
+  color: #2675a7;
+  font-size: 9px;
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(30,75,100,.13);
+}
+
+.tag-one { top: 12%; left: 1%; transform: rotate(-10deg); }
+
+.tag-two {
+  right: 0;
+  bottom: 12%;
+  background: #e8f3e7;
+  color: #4d805b;
+}
+
+@keyframes yooFloat {
+  50% { transform: translateY(-10px); }
+}
+
+/* PROMISE STRIP */
+
+.promise-strip {
+  padding: 22px clamp(25px,8vw,125px);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  border-bottom: 1px solid #edf1f4;
+  background: #fff;
+}
+
+.promise-strip > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.promise-strip > div > span {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #eef7fb;
+  color: #3181b3;
+  font-size: 18px;
+}
+
+.promise-strip p { margin: 0; }
+.promise-strip b, .promise-strip small { display: block; }
+.promise-strip b { font-size: 11px; color: #315b78; }
+
+.promise-strip small {
+  margin-top: 4px;
+  color: #8799a6;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* GENERAL SECTION */
+
+.section { padding: 88px clamp(24px,8vw,125px); }
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 35px;
+}
+
+.section-heading > div { max-width: 650px; }
+
+.section-heading h2 {
+  margin: 12px 0 0;
+  color: #104c83;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(32px,4vw,49px);
+  line-height: 1.15;
+  letter-spacing: -.7px;
+}
+
+.section-heading > p {
+  max-width: 370px;
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* CATEGORIES */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+
+.category-card {
+  min-height: 245px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform .25s,box-shadow .25s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.category-card.goat { background: #eaf4fb; }
+.category-card.nut { background: #f7f1e9; }
+.category-card.yogurt { background: #edf5ed; }
+
+.category-card > div:last-child {
+  position: relative;
+  z-index: 1;
+}
+
+.category-card span {
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  color: #7892a5;
+}
+
+.category-card h3 {
+  margin: 12px 0 18px;
+  color: #1b4e73;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+}
+
+.category-card b { font-size: 10px; color: #1d6da5; }
+.category-card b i { font-style: normal; margin-left: 8px; }
+
+.category-art {
+  width: 48%;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.category-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform .25s;
+}
+
+.category-card:hover .category-art img { transform: scale(1.06); }
+
+/* PRODUCTS */
+
+.products-section { background: #f7fafc; }
+
+.product-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border: 1px solid #dce7ef;
+  border-radius: 30px;
+  background: #fff;
+  color: #688195;
+  padding: 9px 15px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: #155b94;
+  border-color: #155b94;
+  color: #fff;
+}
+
+.search-box {
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid #dce7ef;
+  border-radius: 30px;
+  background: #fff;
+  color: #2878a8;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 19px;
+}
+
+.product-card {
+  overflow: hidden;
+  border: 1px solid #e7edf2;
+  border-radius: 8px;
+  background: #fff;
+  transition: transform .25s,box-shadow .25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.product-image {
+  height: 245px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #edf6fb;
+}
+
+.product-card:nth-child(even) .product-image { background: #f2f7ef; }
+
+.product-detail-link {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.product-image img {
+  width: 86%;
+  height: 88%;
+  object-fit: contain;
+  transition: transform .3s;
+}
+
+.product-card:hover .product-image img { transform: scale(1.05); }
+
+.product-label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #fff;
+  color: #397ba2;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.product-info { padding: 18px; }
+
+.product-info h3 {
+  margin: 0 0 9px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.35;
+  color: #214d6d;
+}
+
+.product-title-link:hover { color: #1678b8; }
+
+.product-info p {
+  min-height: 76px;
+  margin: 0 0 17px;
+  color: #7b8e9c;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.product-bottom > b {
+  color: #155f99;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.add-btn {
+  border: 0;
+  border-radius: 4px;
+  background: #e9f3fa;
+  color: #17669e;
+  padding: 10px 12px;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.add-btn:hover { background: #176ba8; color: #fff; }
+.add-btn span { margin-left: 5px; font-size: 14px; }
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: #78909d;
+  font-size: 12px;
+}
+
+/* PROMOTION */
+
+.promo {
+  margin: 0 clamp(12px,5vw,70px);
+  padding: 48px clamp(25px,7vw,95px);
+  min-height: 340px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+  border-radius: 9px;
+  overflow: hidden;
+  background: linear-gradient(110deg,#104f85,#247bb0);
+  color: #fff;
+}
+
+.promo .eyebrow { color: #c7e5f5; }
+
+.promo-content h2 {
+  margin: 14px 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(36px,4.4vw,54px);
+  line-height: 1.12;
+}
+
+.promo-content h2 em { color: #d8efdf; }
+
+.promo-content p {
+  max-width: 430px;
+  color: #e1edf5;
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.btn-light {
+  margin-top: 12px;
+  background: #fff;
+  color: #15578c;
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  background: #eaf5fc;
+}
+
+.promo-decoration {
+  display: grid;
+  place-items: center;
+  min-height: 250px;
+}
+
+.promo-decoration img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 20px rgba(0,0,0,.2));
+}
+
+/* STORY */
+
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 9%;
+}
+
+.story-image {
+  min-height: 390px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #eaf4fa;
+}
+
+.story-image img {
+  width: 90%;
+  height: 350px;
+  object-fit: contain;
+}
+
+.story-stamp {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #2675a7;
+  text-align: center;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 13px;
+  line-height: 1.1;
+  box-shadow: 0 8px 24px rgba(35,70,92,.12);
+}
+
+.story-copy h2, .contact-section h2 {
+  margin: 14px 0 20px;
+  color: #104c83;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(35px,4vw,51px);
+  line-height: 1.12;
+}
+
+.story-copy h2 em, .contact-section h2 em { color: #3789b9; }
+
+.story-copy p, .contact-section > div > p {
+  color: #738797;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.story-copy blockquote {
+  margin: 24px 0;
+  color: #2779aa;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  font-style: italic;
+}
+
+.story-copy .text-link {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* VALUES */
+
+.values {
+  padding: 43px clamp(25px,10vw,150px);
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 35px;
+  background: #eff6f0;
+}
+
+.values > div {
+  padding-left: 20px;
+  border-left: 1px solid #cbded0;
+}
+
+.values > div > span {
+  color: #4388b1;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.values h3 {
+  margin: 10px 0;
+  color: #27536e;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+}
+
+.values p {
+  max-width: 240px;
+  margin: 0;
+  color: #7d9186;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* FAQ - TWO COLUMN ACCORDION */
+
+.faq-modern {
+  width: 100%;
+  padding: 94px clamp(24px,8vw,125px);
+  background: #f7fafc;
+}
+
+.faq-modern-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
+  gap: clamp(40px,7vw,90px);
+  align-items: start;
+}
+
+.faq-modern-intro { padding-top: 12px; }
+
+.faq-label {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #347eae;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.faq-modern-intro h2 {
+  margin: 0 0 22px;
+  color: #0b4d88;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(38px,4.2vw,54px);
+  line-height: 1.16;
+  letter-spacing: -1px;
+}
+
+.faq-intro-text {
+  max-width: 390px;
+  margin: 0 0 30px;
+  color: #71869a;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.faq-support-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  margin: 0 0 25px;
+  border: 1px solid #e0ebf3;
+  border-radius: 8px;
+  background: #edf5fb;
+}
+
+.faq-support-icon {
+  flex-shrink: 0;
+  color: #1769a6;
+  font-size: 22px;
+}
+
+.faq-support-note strong {
+  display: block;
+  color: #174e7e;
+  font-size: 12px;
+}
+
+.faq-support-note p {
+  margin: 7px 0;
+  color: #71869a;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.faq-support-note a, .faq-all-link {
+  color: #1767a3;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.faq-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #8db4d1;
+  font-size: 11px;
+}
+
+.faq-modern-content {
+  min-width: 0;
+  width: 100%;
+}
+
+.faq-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0 18px;
+  border-bottom: 1px solid #dce6ee;
+  color: #7890a5;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.faq-accordion { width: 100%; }
+
+.faq-modern-item {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid #dce6ee;
+  background: transparent;
+}
+
+.faq-modern-item summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 78px;
+  padding: 14px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-modern-item summary::-webkit-details-marker { display: none; }
+
+.faq-index {
+  flex: 0 0 25px;
+  color: #8aa9c4;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+}
+
+.faq-question {
+  flex: 1;
+  color: #174d7a;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.faq-toggle {
+  flex: 0 0 27px;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d5e3ee;
+  border-radius: 50%;
+  color: #1768a5;
+  font-size: 17px;
+  transition: all .2s;
+}
+
+.faq-modern-item[open] .faq-toggle {
+  transform: rotate(45deg);
+  background: #155b94;
+  border-color: #155b94;
+  color: #fff;
+}
+
+.faq-answer {
+  padding: 0 38px 22px 41px;
+  animation: faqAppear .2s ease;
+}
+
+.faq-answer p {
+  margin: 0 0 12px;
+  color: #6e8295;
+  font-size: 11px;
+  line-height: 1.95;
+}
+
+.faq-answer a {
+  color: #1769a6;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.faq-answer a:hover { text-decoration: underline; }
+
+.faq-view-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 14px 17px;
+  border-radius: 6px;
+  background: #e9f3fa;
+  color: #155b94;
+  font-size: 11px;
+  font-weight: 800;
+  transition: background .2s;
+}
+
+.faq-view-all:hover { background: #dcecf8; }
+
+@keyframes faqAppear {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CONTACT */
+
+.contact-section {
+  padding: 85px clamp(24px,8vw,125px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: start;
+  background: #f5f9fc;
+}
+
+.contact-section > div > p { max-width: 450px; }
+
+.contact-form {
+  display: grid;
+  gap: 13px;
+  padding: 25px;
+  border: 1px solid #e5edf3;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.contact-form label, .payment-box label {
+  color: #4e6c82;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.contact-form input,
+.contact-form textarea,
+.payment-box input:not([type=radio]),
+.payment-box textarea {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid #dfe9f0;
+  border-radius: 4px;
+  outline-color: #75b4dc;
+  font-size: 11px;
+  resize: vertical;
+}
+
+.contact-form small {
+  color: #8a9ba8;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 45px clamp(24px,8vw,125px) 18px;
+  background: #104d7c;
+  color: #eaf5fb;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+  gap: 28px;
+  padding-bottom: 32px;
+}
+
+.brand-footer img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.footer-brand p,
+.footer-main p,
+.footer-main > div > a {
+  display: block;
+  margin: 8px 0;
+  color: #c8dce8;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.footer-main h3 {
+  margin: 7px 0 13px;
+  color: #fff;
+  font-size: 11px;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.socials a {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #6e94ad;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 16px;
+  border-top: 1px solid #477493;
+  color: #c5d9e5;
+  font-size: 9px;
+}
+
+/* CART DRAWER */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(5,30,48,.48);
+  opacity: 0;
+  visibility: hidden;
+  transition: .25s;
+}
+
+.overlay.show { opacity: 1; visibility: visible; }
+
+.cart-drawer {
+  position: fixed;
+  z-index: 81;
+  top: 0;
+  right: 0;
+  width: min(430px,100%);
+  height: 100dvh;
+  padding: 25px;
+  background: #fff;
+  box-shadow: -15px 0 45px rgba(12,48,70,.16);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(105%);
+  transition: transform .3s;
+}
+
+.cart-drawer.open { transform: translateX(0); }
+
+.drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #e5edf2;
+}
+
+.drawer-head .eyebrow { font-size: 9px; }
+
+.drawer-head h2 {
+  margin: 5px 0 0;
+  color: #174d76;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+}
+
+.drawer-head h2 span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  color: #8194a2;
+}
+
+.close-btn {
+  border: 0;
+  background: none;
+  color: #58758a;
+  font-size: 29px;
+}
+
+.cart-items {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 0;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 45px 10px;
+  color: #8295a2;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.cart-empty a { color: #1769a6; font-weight: 800; }
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 68px 1fr auto;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.cart-row img {
+  width: 68px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 5px;
+  background: #f0f7fb;
+}
+
+.cart-row h4 { margin: 4px 0; font-size: 11px; }
+.cart-row small { color: #8193a0; font-size: 9px; }
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 8px 0;
+}
+
+.qty button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #dce7ee;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.remove {
+  border: 0;
+  background: none;
+  color: #b46a78;
+  font-size: 9px;
+}
+
+.drawer-bottom {
+  padding-top: 15px;
+  border-top: 1px solid #e5edf2;
+}
+
+.shipping-note {
+  margin-bottom: 13px;
+  color: #748999;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.checkout-btn { width: 100%; }
+
+.drawer-bottom > small {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #8799a5;
+  font-size: 9px;
+}
+
+.toast {
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 25px;
+  max-width: 90vw;
+  padding: 12px 18px;
+  border-radius: 30px;
+  background: #173f59;
+  color: #fff;
+  font-size: 11px;
+  box-shadow: 0 8px 25px rgba(10,45,65,.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%,15px);
+  transition: .25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%,0);
+}
+
+/* PAYMENT MODAL */
+
+.payment-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(5,30,48,.58);
+}
+
+.payment-modal.show { display: flex; }
+
+.payment-box {
+  position: relative;
+  width: min(520px,100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.payment-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  border: 0;
+  background: none;
+  color: #617b8e;
+  font-size: 27px;
+}
+
+.payment-box h2 {
+  margin: 10px 0;
+  color: #104c83;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 29px;
+}
+
+.payment-intro { color: #75899a; font-size: 11px; }
+
+.payment-box form {
+  display: grid;
+  gap: 13px;
+}
+
+.payment-box h3 {
+  margin: 5px 0 0;
+  color: #315b78;
+  font-size: 12px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px;
+  border: 1px solid #e5edf3;
+  border-radius: 5px;
+}
+
+.payment-option input { accent-color: #176ba8; }
+
+.payment-demo-note {
+  padding: 11px;
+  border-radius: 5px;
+  background: #fff7e9;
+  color: #8b6b36;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.payment-total {
+  color: #155b94;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.payment-submit { width: 100%; }
+
+/* SUPPORT CHAT */
+
+.chat-launch {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 70;
+  width: 49px;
+  height: 49px;
+  border: 0;
+  border-radius: 50%;
+  background: #176ba8;
+  color: #fff;
+  font-size: 22px;
+  box-shadow: 0 8px 25px rgba(22,76,106,.25);
+}
+
+.chat-box {
+  position: fixed;
+  right: 22px;
+  bottom: 82px;
+  z-index: 71;
+  width: min(320px,calc(100vw - 30px));
+  padding: 16px;
+  border: 1px solid #e4edf3;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 15px 45px rgba(23,62,86,.18);
+}
+
+.chat-box[hidden] { display: none; }
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #1c5e88;
+  font-size: 12px;
+}
+
+.chat-head button {
+  border: 0;
+  background: none;
+  color: #58758a;
+  font-size: 23px;
+}
+
+.chat-box > p, .chat-reply {
+  color: #718692;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.quick-questions {
+  display: grid;
+  gap: 7px;
+}
+
+.quick-questions button {
+  padding: 9px;
+  border: 1px solid #dcebf2;
+  border-radius: 5px;
+  background: #f5fafc;
+  color: #276b91;
+  text-align: left;
+  font-size: 10px;
+}
+
+.chat-reply {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #eef7fb;
+}
+
+.mobile-bar { display: none; }
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .site-header { padding: 0 25px; }
+  .main-nav { gap: 12px; }
+  .main-nav a { font-size: 10px; }
+  .hero { padding-left: 5vw; padding-right: 5vw; }
+  .section, .faq-modern, .contact-section {
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/#organization",
-    "name": "YoooMILK",
-    "url": "https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/",
-    "logo": "https://duongthinhuquynhbc-cyber.github.io/yooomilk-website/assets/logo-yooomilk.webp"
+  .promise-strip {
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
-  </script>
+  .product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .footer-main { grid-template-columns: repeat(2,1fr); }
+}
 
-  <meta name="theme-color" content="#0879d8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261121-faqfix">
-</head>
+/* MOBILE */
 
-<body>
-  <div class="announcement">YoooMILK · Một giọt tươi – Một ngày lành</div>
+@media (max-width: 720px) {
+  html { scroll-padding-top: 75px; }
+  .announcement { font-size: 8px; }
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="YoooMILK - Trang chủ">
-      <img
-        src="assets/logo-yooomilk.webp"
-        alt="Logo YoooMILK"
-        width="68"
-        height="68"
-        style="width:68px;height:68px;object-fit:contain">
-    </a>
+  .site-header {
+    height: 70px;
+    padding: 0 16px;
+    gap: 10px;
+  }
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+  .brand img { width: 54px; height: 54px; }
+  .menu-toggle { display: block; margin-left: auto; }
 
-    <nav class="main-nav" id="mainNav">
-      <a href="#home">Trang chủ</a>
-      <a href="#products">Sản phẩm</a>
-      <a href="#promotion">Khám phá</a>
-      <a href="faq.html">Câu hỏi thường gặp</a>
-      <a href="story.html">Câu chuyện YoooMILK</a>
-      <a href="#contact">Liên hệ</a>
-    </nav>
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 16px 22px 20px;
+    background: #fff;
+    box-shadow: 0 12px 20px rgba(20,56,75,.10);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
 
-    <div class="header-actions">
-      <button class="icon-btn" id="searchToggle" aria-label="Tìm kiếm">⌕</button>
-      <button class="cart-trigger" id="cartOpen" aria-label="Mở giỏ hàng">Giỏ hàng <span id="cartCount">0</span></button>
-    </div>
-  </header>
+  .main-nav.open { display: flex; }
+  .main-nav a { font-size: 12px; }
+  .header-actions { gap: 6px; }
 
-  <main>
-    <!-- TRANG CHỦ -->
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <span class="eyebrow">TƯƠI LÀNH MỖI NGÀY</span>
-        <h1>Sữa dê tươi YoooMILK – Một giọt tươi, một ngày lành</h1>
-        <p>
-          Khám phá thế giới hương vị từ YoooMILK – nơi hội tụ các sản phẩm từ sữa dê,
-          sữa hạt hạnh nhân và sữa chua. Từ vị thơm béo đặc trưng của sữa dê nguyên chất,
-          lựa chọn ít đường đến những thức uống từ thực vật và món sữa chua mềm mịn,
-          mỗi sản phẩm mở ra thêm một lựa chọn thú vị cho thực đơn hằng ngày.
-        </p>
+  .icon-btn {
+    width: 33px;
+    height: 33px;
+    font-size: 20px;
+  }
 
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#products">Khám phá sản phẩm <span>↗</span></a>
-          <a class="text-link" href="story.html">Tìm hiểu YoooMILK</a>
-        </div>
+  .cart-trigger {
+    padding: 9px 11px;
+    font-size: 9px;
+  }
 
-        <div class="hero-note">
-          <span class="note-icon">✳</span>
-          <span>
-            <b>Khám phá vị ngon riêng</b>
-            <small>Tìm sản phẩm hợp khẩu vị của bạn</small>
-          </span>
-        </div>
-      </div>
+  .hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    padding: 48px 23px 25px;
+    gap: 10px;
+  }
 
-      <div class="hero-art">
-        <div class="hero-blob"></div>
-        <img
-          src="assets/sua-de-nguyen-chat.webp"
-          alt="Sản phẩm sữa dê tươi nguyên chất YoooMILK"
-          fetchpriority="high">
-        <span class="floating-tag tag-one">Fresh choice</span>
-        <span class="floating-tag tag-two">YoooMILK ♡</span>
-      </div>
-    </section>
+  .hero-copy h1 { font-size: clamp(37px,10vw,47px); }
+  .hero-copy p { font-size: 11px; }
+  .hero-buttons { gap: 16px; margin-top: 22px; }
 
-    <!-- CAM KẾT -->
-    <section class="promise-strip" aria-label="Thông tin dịch vụ YoooMILK">
-      <div><span>✦</span><p><b>Danh mục đa dạng</b><small>Nhiều lựa chọn từ sữa dê đến sữa hạt</small></p></div>
-      <div><span>⌁</span><p><b>Thông tin sản phẩm</b><small>Tham khảo quy cách và giá bán</small></p></div>
-      <div><span>↗</span><p><b>Đặt hàng thuận tiện</b><small>Chọn sản phẩm ngay trên website</small></p></div>
-      <div><span>♡</span><p><b>Kết nối tư vấn</b><small>Gửi câu hỏi đến YoooMILK</small></p></div>
-    </section>
+  .btn {
+    padding: 12px 15px;
+    font-size: 10px;
+  }
 
-    <!-- DANH MỤC -->
-    <section class="section categories">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">DANH MỤC SẢN PHẨM</span>
-          <h2>Khám phá các dòng sản phẩm sữa YoooMILK</h2>
-        </div>
-        <p>
-          Bắt đầu từ nhóm sản phẩm bạn yêu thích: sữa dê với hương vị đặc trưng,
-          sữa hạt hạnh nhân từ thực vật hay sữa chua mềm mịn. Mỗi danh mục đều
-          giúp bạn dễ dàng khám phá lựa chọn phù hợp với khẩu vị.
-        </p>
-      </div>
+  .hero-art { min-height: 300px; }
+  .hero-blob { width: 270px; height: 270px; }
 
-      <div class="category-grid">
-        <a class="category-card goat" href="#products" data-category-link="goat">
-          <div class="category-art">
-            <img src="assets/sua-de-nguyen-chat.webp" alt="Danh mục sản phẩm sữa dê tươi YoooMILK" loading="lazy" decoding="async">
-          </div>
-          <div>
-            <span>01 / TƯƠI MÁT</span>
-            <h3>Sữa dê tươi</h3>
-            <b>Khám phá <i>↗</i></b>
-          </div>
-        </a>
+  .hero-art > img {
+    width: 85%;
+    height: 300px;
+  }
 
-        <a class="category-card nut" href="#products" data-category-link="nut">
-          <div class="category-art">
-            <img src="assets/sua-hat-hanh-nhan.webp" alt="Danh mục sữa hạt hạnh nhân YoooMILK" loading="lazy" decoding="async">
-          </div>
-          <div>
-            <span>02 / TỪ HẠT</span>
-            <h3>Sữa hạt</h3>
-            <b>Khám phá <i>↗</i></b>
-          </div>
-        </a>
+  .floating-tag {
+    width: 61px;
+    height: 61px;
+    font-size: 8px;
+  }
 
-        <a class="category-card yogurt" href="#products" data-category-link="yogurt">
-          <div class="category-art">
-            <img src="assets/sua-chua-yooomilk.webp" alt="Danh mục sản phẩm sữa chua YoooMILK" loading="lazy" decoding="async">
-          </div>
-          <div>
-            <span>03 / MỀM MỊN</span>
-            <h3>Sữa chua</h3>
-            <b>Khám phá <i>↗</i></b>
-          </div>
-        </a>
-      </div>
-    </section>
+  .promise-strip {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 15px;
+    padding: 20px 22px;
+  }
 
-    <!-- SẢN PHẨM -->
-    <section class="section products-section" id="products">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">YOOOMILK SELECTION</span>
-          <h2>Các sản phẩm sữa dê tươi, sữa hạt và sữa chua YoooMILK</h2>
-        </div>
-        <p>
-          Tìm hiểu từng sản phẩm qua mô tả, quy cách và giá bán được trình bày
-          trực tiếp trên website. Bạn có thể lọc theo danh mục, tìm kiếm theo tên
-          hoặc mở trang chi tiết để xem thêm thông tin trước khi lựa chọn.
-        </p>
-      </div>
+  .promise-strip b { font-size: 10px; }
+  .promise-strip small { font-size: 8px; }
+  .section { padding: 60px 22px; }
 
-      <div class="product-toolbar">
-        <div class="filters" role="group" aria-label="Lọc sản phẩm">
-          <button class="filter-btn active" data-filter="all">Tất cả</button>
-          <button class="filter-btn" data-filter="goat">Sữa dê tươi</button>
-          <button class="filter-btn" data-filter="nut">Sữa hạt</button>
-          <button class="filter-btn" data-filter="yogurt">Sữa chua</button>
-        </div>
+  .section-heading {
+    display: block;
+    margin-bottom: 25px;
+  }
 
-        <label class="search-box" id="searchBox">
-          <span>⌕</span>
-          <input id="productSearch" type="search" placeholder="Tìm sản phẩm..." aria-label="Tìm sản phẩm">
-        </label>
-      </div>
+  .section-heading h2 { font-size: 36px; }
+  .section-heading > p { margin-top: 13px; }
 
-      <div class="product-grid" id="productGrid">
-        <article class="product-card" data-product-id="goat-original" data-category="goat" data-name="sữa dê tươi nguyên chất">
-          <div class="product-image">
-            <a class="product-detail-link" href="product.html?id=goat-original" aria-label="Xem chi tiết Sữa dê tươi nguyên chất YoooMILK dung tích 1 lít">
-              <img src="assets/sua-de-nguyen-chat.webp" alt="Sữa dê tươi nguyên chất YoooMILK dung tích 1 lít" loading="lazy">
-            </a>
-          </div>
-          <div class="product-info">
-            <div>
-              <h3><a class="product-title-link" href="product.html?id=goat-original">Sữa dê tươi nguyên chất 1L</a></h3>
-              <p>Sữa dê tươi nguyên chất YoooMILK 1L dành cho những ai yêu thích hương vị sữa dê tự nhiên. Với dung tích tiện lợi, sản phẩm phù hợp để sử dụng trong thực đơn hằng ngày của cá nhân và gia đình.</p>
-            </div>
-            <div class="product-bottom">
-              <b>69.000đ</b>
-              <button class="add-btn" data-add="goat-original">Thêm vào giỏ <span>＋</span></button>
-            </div>
-          </div>
-        </article>
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 
-        <article class="product-card" data-product-id="goat-low" data-category="goat" data-name="sữa dê tươi ít đường">
-          <div class="product-image">
-            <a class="product-detail-link" href="product.html?id=goat-low" aria-label="Xem chi tiết Sữa dê tươi ít đường YoooMILK dung tích 1 lít">
-              <img src="assets/sua-de-it-duong.webp" alt="Sữa dê tươi ít đường YoooMILK dung tích 1 lít" loading="lazy">
-            </a>
-          </div>
-          <div class="product-info">
-            <div>
-              <h3><a class="product-title-link" href="product.html?id=goat-low">Sữa dê tươi ít đường 1L</a></h3>
-              <p>Sữa dê tươi ít đường YoooMILK 1L là lựa chọn dành cho những khách hàng yêu thích sữa dê nhưng muốn giảm độ ngọt khi thưởng thức. Hương vị dịu nhẹ, dễ uống, phù hợp để bổ sung vào thói quen dinh dưỡng mỗi ngày.</p>
-            </div>
-            <div class="product-bottom">
-              <b>72.000đ</b>
-              <button class="add-btn" data-add="goat-low">Thêm vào giỏ <span>＋</span></button>
-            </div>
-          </div>
-        </article>
+  .category-card {
+    min-height: 185px;
+    padding: 18px;
+  }
 
-        <article class="product-card" data-product-id="goat-organic" data-category="goat" data-name="sữa dê organic">
-          <div class="product-image">
-            <a class="product-detail-link" href="product.html?id=goat-organic" aria-label="Xem chi tiết Sữa dê Organic YoooMILK dung tích 1 lít">
-              <img src="assets/sua-de-organic.webp" alt="Sữa dê Organic YoooMILK dung tích 1 lít" loading="lazy">
-            </a>
-          </div>
-          <div class="product-info">
-            <div>
-              <h3><a class="product-title-link" href="product.html?id=goat-organic">Sữa dê Organic 1L</a></h3>
-              <p>Sữa dê Organic YoooMILK 1L dành cho những khách hàng quan tâm đến các sản phẩm thuộc dòng sữa dê hữu cơ. Sản phẩm mang đến thêm một lựa chọn cho những ai yêu thích sữa dê và mong muốn đa dạng hóa thực đơn hằng ngày.</p>
-            </div>
-            <div class="product-bottom">
-              <b>79.000đ</b>
-              <button class="add-btn" data-add="goat-organic">Thêm vào giỏ <span>＋</span></button>
-            </div>
-          </div>
-        </article>
+  .category-art { height: 150px; }
 
-        <article class="product-card" data-product-id="almond" data-category="nut" data-name="sữa hạt hạnh nhân">
-          <div class="product-image">
-            <span class="product-label">TỪ HẠT</span>
-            <a class="product-detail-link" href="product.html?id=almond" aria-label="Xem chi tiết Sữa hạt hạnh nhân YoooMILK dung tích 1 lít">
-              <img src="assets/sua-hat-hanh-nhan.webp" alt="Sữa hạt hạnh nhân YoooMILK dung tích 1 lít" loading="lazy">
-            </a>
-          </div>
-          <div class="product-info">
-            <div>
-              <h3><a class="product-title-link" href="product.html?id=almond">Sữa hạt hạnh nhân 1L</a></h3>
-              <p>Sữa hạt hạnh nhân YoooMILK 1L là lựa chọn thơm ngon dành cho những ai yêu thích thức uống từ thực vật. Hương vị hạnh nhân đặc trưng cùng dung tích 1L tiện lợi, phù hợp để thưởng thức tại nhà hoặc trong những giờ nghỉ giữa ngày.</p>
-            </div>
-            <div class="product-bottom">
-              <b>59.000đ</b>
-              <button class="add-btn" data-add="almond">Thêm vào giỏ <span>＋</span></button>
-            </div>
-          </div>
-        </article>
+  .product-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
 
-        <article class="product-card" data-product-id="yogurt" data-category="yogurt" data-name="sữa chua yooomilk">
-          <div class="product-image">
-            <span class="product-label">MỀM MỊN</span>
-            <a class="product-detail-link" href="product.html?id=yogurt" aria-label="Xem chi tiết Sữa chua YoooMILK lốc 4 hộp">
-              <img src="assets/sua-chua-yooomilk.webp" alt="Sữa chua YoooMILK lốc 4 hộp" loading="lazy">
-            </a>
-          </div>
-          <div class="product-info">
-            <div>
-              <h3><a class="product-title-link" href="product.html?id=yogurt">Sữa chua YoooMILK lốc 4 hộp</a></h3>
-              <p>Sữa chua YoooMILK lốc 4 hộp với kết cấu mềm mịn và hương vị thơm ngon, thích hợp làm món ăn nhẹ trong ngày. Quy cách đóng lốc tiện lợi giúp bạn dễ dàng bảo quản và thưởng thức cùng gia đình.</p>
-            </div>
-            <div class="product-bottom">
-              <b>49.000đ</b>
-              <button class="add-btn" data-add="yogurt">Thêm vào giỏ <span>＋</span></button>
-            </div>
-          </div>
-        </article>
-      </div>
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
 
-      <p class="empty-state" id="emptyState" hidden>Không tìm thấy sản phẩm phù hợp. Bạn hãy thử từ khóa khác nhé.</p>
-    </section>
+  .search-box {
+    width: 100%;
+    min-width: 0;
+  }
 
-    <!-- KHUYẾN MÃI / KHÁM PHÁ -->
-    <section class="promo" id="promotion">
-      <div class="promo-content">
-        <span class="eyebrow">A LITTLE FRESHNESS</span>
-        <h2>Mỗi ngày thêm<br><em>một lựa chọn lành.</em></h2>
-        <p>Khám phá các dòng sản phẩm đang có tại YoooMILK, tham khảo thông tin và mức giá được niêm yết trên website. Lựa chọn hương vị bạn yêu thích và gửi yêu cầu tư vấn khi cần tìm hiểu thêm.</p>
-        <a class="btn btn-light" href="#contact">Nhận tư vấn <span>↗</span></a>
-      </div>
-      <div class="promo-decoration">
-        <img src="assets/promo-goat-low.webp" alt="Sản phẩm sữa dê tươi ít đường YoooMILK" loading="lazy">
-      </div>
-    </section>
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 
-    <!-- CÂU CHUYỆN THƯƠNG HIỆU -->
-    <section class="section story-section" id="story">
-      <div class="story-image">
-        <img src="assets/sua-de-nguyen-chat.webp" alt="Sản phẩm sữa dê tươi nguyên chất YoooMILK" loading="lazy">
-        <span class="story-stamp">YOOO<br>MILK</span>
-      </div>
+  .product-image { height: 235px; }
+  .product-info p { min-height: 0; }
 
-      <div class="story-copy">
-        <span class="eyebrow">HELLO, WE ARE YOOOMILK</span>
-        <h2>Câu chuyện<br><em>thương hiệu YoooMILK</em></h2>
-        <p>YoooMILK giới thiệu danh mục sản phẩm gồm sữa dê tươi nguyên chất, sữa dê ít đường, sữa dê Organic, sữa hạt hạnh nhân và sữa chua. Thương hiệu hướng đến việc mang đến thêm lựa chọn hương vị cho những khách hàng yêu thích các sản phẩm từ sữa và thực vật.</p>
-        <p>Website được xây dựng như một không gian trực tuyến để khách hàng khám phá danh mục, tìm hiểu mô tả, quy cách và giá bán. Từng trang sản phẩm cung cấp thông tin cụ thể hơn, hỗ trợ quá trình cân nhắc trước khi đặt hàng hoặc gửi yêu cầu tư vấn.</p>
-        <blockquote>“Một giọt tươi – Một ngày lành”</blockquote>
-        <a class="text-link" href="story.html">Tìm hiểu thêm về câu chuyện YoooMILK <span>↗</span></a>
-      </div>
-    </section>
+  .promo {
+    margin: 0 12px;
+    padding: 35px 24px;
+    grid-template-columns: 1fr;
+  }
 
-    <!-- GIÁ TRỊ -->
-    <section class="values">
-      <div>
-        <span>01</span>
-        <h3>Tươi mới</h3>
-        <p>Hướng đến những lựa chọn phù hợp với nhịp sống mỗi ngày.</p>
-      </div>
-      <div>
-        <span>02</span>
-        <h3>Minh bạch</h3>
-        <p>Thông tin sản phẩm được trình bày rõ ràng để khách hàng tham khảo.</p>
-      </div>
-      <div>
-        <span>03</span>
-        <h3>Thuận tiện</h3>
-        <p>Tìm kiếm, xem sản phẩm và lựa chọn ngay trên một nền tảng.</p>
-      </div>
-    </section>
+  .promo-content h2 { font-size: 40px; }
+  .promo-decoration { min-height: 200px; }
+  .promo-decoration img { height: 220px; }
 
-    <!-- FAQ -->
-    <section class="faq-modern" id="faq">
-      <div class="faq-modern-container">
+  .story-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
-        <div class="faq-modern-intro">
-          <span class="faq-label">YOOOMILK CUSTOMER CARE</span>
-          <h2>Chúng tôi luôn<br>sẵn sàng giải đáp.</h2>
-          <p class="faq-intro-text">
-            Tìm hiểu những thông tin cần thiết về sản phẩm,
-            thành phần, cách lựa chọn và quy trình mua sắm
-            để bạn an tâm hơn khi trải nghiệm YoooMILK.
-          </p>
+  .story-image { min-height: 280px; }
+  .story-image img { height: 260px; }
 
-          <div class="faq-support-note">
-            <span class="faq-support-icon">✳</span>
-            <div>
-              <strong>Bạn cần hỗ trợ thêm?</strong>
-              <p>Đừng ngần ngại liên hệ với YoooMILK để được giải đáp.</p>
-              <a href="#contact">Liên hệ với chúng tôi ↗</a>
-            </div>
-          </div>
+  .story-copy h2, .contact-section h2 { font-size: 39px; }
 
-          <a href="faq.html" class="faq-all-link">
-            Khám phá trung tâm hỗ trợ <span>↗</span>
-          </a>
-        </div>
+  .values {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 35px 28px;
+  }
 
-        <div class="faq-modern-content">
-          <div class="faq-topline">
-            <span>NHỮNG CÂU HỎI THƯỜNG GẶP</span>
-            <span>01 — 05</span>
-          </div>
+  .values > div { padding-left: 15px; }
 
-          <div class="faq-accordion">
-            <details class="faq-modern-item">
-              <summary>
-                <span class="faq-index">01</span>
-                <span class="faq-question">YoooMILK hiện có những dòng sản phẩm nào?</span>
-                <span class="faq-toggle">+</span>
-              </summary>
-              <div class="faq-answer">
-                <p>YoooMILK giới thiệu các lựa chọn gồm sữa dê tươi nguyên chất, sữa dê tươi ít đường, sữa dê Organic, sữa hạt hạnh nhân và sữa chua. Mỗi dòng sản phẩm mang đến một lựa chọn khác nhau, đáp ứng nhu cầu tìm hiểu và sử dụng đa dạng của khách hàng.</p>
-                <a href="faq.html#faq-products">Xem thông tin sản phẩm ↗</a>
-              </div>
-            </details>
+  /* FAQ MOBILE */
+  .faq-modern { padding: 62px 22px; }
 
-            <details class="faq-modern-item">
-              <summary>
-                <span class="faq-index">02</span>
-                <span class="faq-question">Làm thế nào để xem thông tin chi tiết sản phẩm?</span>
-                <span class="faq-toggle">+</span>
-              </summary>
-              <div class="faq-answer">
-                <p>Bạn có thể truy cập danh mục sản phẩm trên website, lựa chọn mặt hàng muốn tìm hiểu và nhấn vào sản phẩm để mở trang thông tin chi tiết. Tại đây, bạn có thể tham khảo mô tả, quy cách đóng gói, giá bán và các thông tin được công bố cho từng sản phẩm.</p>
-                <a href="faq.html#faq-details">Xem hướng dẫn chi tiết ↗</a>
-              </div>
-            </details>
+  .faq-modern-container {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
 
-            <details class="faq-modern-item">
-              <summary>
-                <span class="faq-index">03</span>
-                <span class="faq-question">Làm thế nào để thêm sản phẩm vào giỏ hàng?</span>
-                <span class="faq-toggle">+</span>
-              </summary>
-              <div class="faq-answer">
-                <p>Truy cập sản phẩm bạn muốn mua, chọn số lượng phù hợp rồi nhấn nút thêm vào giỏ hàng. Bạn có thể mở giỏ hàng để kiểm tra sản phẩm, điều chỉnh số lượng hoặc xóa những mặt hàng không còn nhu cầu trước khi tiếp tục.</p>
-                <a href="faq.html#faq-cart">Xem hướng dẫn sử dụng giỏ hàng ↗</a>
-              </div>
-            </details>
+  .faq-modern-intro h2 { font-size: 39px; }
+  .faq-intro-text { max-width: 100%; }
 
-            <details class="faq-modern-item">
-              <summary>
-                <span class="faq-index">04</span>
-                <span class="faq-question">Thông tin thành phần và dinh dưỡng được xem ở đâu?</span>
-                <span class="faq-toggle">+</span>
-              </summary>
-              <div class="faq-answer">
-                <p>Bạn có thể tham khảo thông tin thành phần, giá trị dinh dưỡng và hướng dẫn sử dụng được công bố trên bao bì sản phẩm hoặc tài liệu chính thức của nhà sản xuất. Hãy kiểm tra kỹ nhãn sản phẩm để lựa chọn phù hợp với nhu cầu cá nhân.</p>
-                <a href="faq.html#faq-ingredients">Tìm hiểu thêm ↗</a>
-              </div>
-            </details>
+  .faq-modern-item summary {
+    min-height: 70px;
+    gap: 11px;
+  }
 
-            <details class="faq-modern-item">
-              <summary>
-                <span class="faq-index">05</span>
-                <span class="faq-question">Đặt hàng trên website hiện được xử lý như thế nào?</span>
-                <span class="faq-toggle">+</span>
-              </summary>
-              <div class="faq-answer">
-                <p>Bạn có thể thêm sản phẩm vào giỏ hàng, kiểm tra thông tin đơn hàng và điền thông tin theo hướng dẫn trên website. Hãy kiểm tra lại số lượng và thông tin liên hệ trước khi gửi yêu cầu đặt hàng.</p>
-                <a href="faq.html#faq-order">Xem quy trình đặt hàng ↗</a>
-              </div>
-            </details>
-          </div>
+  .faq-question { font-size: 11px; }
 
-          <a href="faq.html" class="faq-view-all">
-            Xem tất cả câu hỏi và câu trả lời <span>→</span>
-          </a>
-        </div>
-      </div>
-    </section>
+  .faq-answer { padding: 0 12px 20px 36px; }
+  .faq-answer p { font-size: 10px; }
 
-    <!-- LIÊN HỆ -->
-    <section class="contact-section" id="contact">
-      <div>
-        <span class="eyebrow">LET'S CONNECT</span>
-        <h2>Bạn cần tìm hiểu<br><em>thêm về YoooMILK?</em></h2>
-        <p>Bạn cần tìm hiểu thêm về sữa dê tươi, sữa hạt hạnh nhân hoặc sữa chua YoooMILK? Hãy gửi câu hỏi để tham khảo thông tin sản phẩm và nhận hỗ trợ tư vấn.</p>
-      </div>
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 60px 22px;
+  }
 
-      <form id="contactForm" class="contact-form">
-        <label>Họ và tên
-          <input name="name" required placeholder="Tên của bạn">
-        </label>
-        <label>Email hoặc số điện thoại
-          <input name="contact" required placeholder="Thông tin liên hệ">
-        </label>
-        <label>Nội dung cần tư vấn
-          <textarea name="message" rows="3" placeholder="Bạn đang quan tâm sản phẩm nào?"></textarea>
-        </label>
-        <button class="btn btn-primary" type="submit">Tạo yêu cầu tư vấn <span>↗</span></button>
-        <small>Biểu mẫu hiện tạo nội dung yêu cầu để bạn sao chép. Chưa gửi dữ liệu lên máy chủ.</small>
-      </form>
-    </section>
-  </main>
+  .contact-form { padding: 20px; }
+  .footer { padding: 35px 22px 18px; }
 
-  <!-- FOOTER -->
-  <footer class="footer" id="footer">
-    <div class="footer-main">
-      <div class="footer-brand">
-        <a class="brand brand-footer" href="#home">
-          <img src="assets/logo-yooomilk.webp" alt="Logo YoooMILK" width="76" height="76" style="width:76px;height:76px;object-fit:contain">
-        </a>
-        <p>Một giọt tươi – Một ngày lành.</p>
-      </div>
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 
-      <div>
-        <h3>Khám phá</h3>
-        <a href="#products">Sản phẩm</a>
-        <a href="#promotion">Khuyến mãi</a>
-        <a href="story.html">Câu chuyện YoooMILK</a>
-      </div>
+  .footer-bottom { font-size: 8px; }
 
-      <div>
-        <h3>Hỗ trợ</h3>
-        <a href="#contact">Liên hệ</a>
-        <a href="#contact">Tư vấn sản phẩm</a>
-        <a href="#footer">Chính sách mua hàng</a>
-      </div>
+  .chat-launch {
+    right: 14px;
+    bottom: 72px;
+    width: 44px;
+    height: 44px;
+  }
 
-      <div>
-        <h3>Kết nối</h3>
-        <p>Website giới thiệu thương hiệu và danh mục sản phẩm YoooMILK.</p>
-        <div class="socials">
-          <a href="#contact" aria-label="Facebook">f</a>
-          <a href="#contact" aria-label="Instagram">ig</a>
-          <a href="#contact" aria-label="TikTok">♪</a>
-        </div>
-      </div>
-    </div>
+  .chat-box {
+    right: 12px;
+    bottom: 124px;
+  }
 
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> YoooMILK. All rights reserved.</span>
-      <span>Made with care · Fresh every day</span>
-    </div>
-  </footer>
+  .toast {
+    bottom: 72px;
+    width: max-content;
+    text-align: center;
+  }
 
-  <!-- GIỎ HÀNG -->
-  <div class="overlay" id="overlay"></div>
+  .mobile-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid #e6eef2;
+    background: #fff;
+    box-shadow: 0 -5px 20px rgba(21,62,85,.08);
+  }
 
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Giỏ hàng" aria-hidden="true" inert>
-    <div class="drawer-head">
-      <div>
-        <span class="eyebrow">YOUR SELECTION</span>
-        <h2>Giỏ hàng <span id="drawerCount">(0)</span></h2>
-      </div>
-      <button class="close-btn" id="cartClose" aria-label="Đóng giỏ hàng">×</button>
-    </div>
+  .mobile-bar a, .mobile-bar button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    border: 0;
+    background: none;
+    color: #286d96;
+    font-size: 17px;
+  }
 
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty">
-        Giỏ hàng đang trống.<br>
-        <a href="#products" id="continueShopping">Khám phá sản phẩm ↗</a>
-      </div>
-    </div>
+  .mobile-bar small {
+    color: #718994;
+    font-size: 8px;
+  }
 
-    <div class="drawer-bottom">
-      <div class="shipping-note">Thông tin giá và phí giao hàng sẽ được xác nhận khi tư vấn.</div>
-      <button class="btn btn-primary checkout-btn" id="checkoutBtn">Tạo nội dung đặt hàng <span>↗</span></button>
-      <small>Giỏ hàng được lưu trên trình duyệt của thiết bị này.</small>
-    </div>
-  </aside>
+  .mobile-bar i {
+    position: absolute;
+    top: -5px;
+    right: -9px;
+    padding: 2px 5px;
+    border-radius: 20px;
+    background: #176ba8;
+    color: #fff;
+    font-size: 8px;
+    font-style: normal;
+  }
+}
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+/* SMALL MOBILE */
 
-  <!-- THANH TOÁN MÔ PHỎNG -->
-  <div class="payment-modal" id="paymentModal" aria-hidden="true">
-    <div class="payment-box">
-      <button type="button" class="payment-close" id="paymentClose">×</button>
-      <span class="eyebrow">YOOOMILK CHECKOUT</span>
-      <h2>Hoàn tất đơn hàng</h2>
-      <p class="payment-intro">Vui lòng cung cấp thông tin nhận hàng.</p>
+@media (max-width: 390px) {
+  .header-actions { gap: 4px; }
+  .icon-btn { width: 30px; height: 30px; }
+  .cart-trigger { padding: 8px 9px; }
+  .hero-copy h1 { font-size: 36px; }
+  .faq-modern-intro h2 { font-size: 35px; }
+  .footer-main { gap: 14px; }
+}
 
-      <form id="paymentForm">
-        <label>Họ và tên
-          <input name="customerName" required placeholder="Nhập họ và tên">
-        </label>
-        <label>Số điện thoại
-          <input name="phone" type="tel" required pattern="[0-9]{10,11}" placeholder="Nhập số điện thoại">
-        </label>
-        <label>Địa chỉ nhận hàng
-          <textarea name="address" required rows="2" placeholder="Số nhà, đường, phường/xã, tỉnh/thành phố"></textarea>
-        </label>
+/* REDUCED MOTION */
 
-        <h3>Phương thức thanh toán</h3>
-        <label class="payment-option">
-          <input type="radio" name="paymentMethod" value="Thanh toán khi nhận hàng (COD)" checked>
-          <span>Thanh toán khi nhận hàng (COD)</span>
-        </label>
-        <label class="payment-option">
-          <input type="radio" name="paymentMethod" value="Chuyển khoản QR (mô phỏng)">
-          <span>Chuyển khoản ngân hàng qua QR (mô phỏng)</span>
-        </label>
-        <label class="payment-option">
-          <input type="radio" name="paymentMethod" value="Ví điện tử (mô phỏng)">
-          <span>Ví điện tử (mô phỏng)</span>
-        </label>
-
-        <div class="payment-demo-note">
-          Đây là website mô phỏng. Các phương thức thanh toán điện tử chưa thực hiện giao dịch thật.
-        </div>
-        <div id="paymentTotal" class="payment-total"></div>
-        <button type="submit" class="btn btn-primary payment-submit">Xác nhận đặt hàng</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
