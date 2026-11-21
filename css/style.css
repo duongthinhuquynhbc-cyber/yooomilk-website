@@ -634,3 +634,221 @@
         line-height: 1.85;
     }
 }
+
+/* =========================================
+   YOOOMILK - HOMEPAGE FAQ PROFESSIONAL
+========================================= */
+
+#faq.faq-section {
+  background: #f5f9fd;
+  padding: 90px 7%;
+  position: relative;
+  overflow: hidden;
+}
+
+#faq .faq-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Heading */
+#faq .faq-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 50px;
+  margin-bottom: 42px;
+}
+
+#faq .faq-heading-main {
+  flex: 1;
+}
+
+#faq .faq-eyebrow {
+  display: inline-block;
+  color: #1764ad;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  margin-bottom: 16px;
+}
+
+#faq .faq-heading h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #064b91;
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+  margin: 0;
+}
+
+#faq .faq-intro {
+  max-width: 360px;
+  color: #71849a;
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0 0 5px;
+}
+
+/* Card grid */
+#faq .faq-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+/* Individual card */
+#faq .faq-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 19px;
+  min-height: 175px;
+  padding: 27px 25px;
+  background: #ffffff;
+  border: 1px solid #e2ebf4;
+  border-radius: 12px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+#faq .faq-card:hover {
+  transform: translateY(-4px);
+  border-color: #a9cce9;
+  box-shadow: 0 13px 30px rgba(16, 75, 133, 0.09);
+}
+
+#faq .faq-number {
+  flex-shrink: 0;
+  color: #7da6ce;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+#faq .faq-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+#faq .faq-card h3 {
+  color: #124d86;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+  margin: 0 0 10px;
+}
+
+#faq .faq-card p {
+  color: #71849a;
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0 0 17px;
+}
+
+#faq .faq-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1265ad;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+#faq .faq-read b {
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+#faq .faq-card:hover .faq-read b {
+  transform: translate(4px, -2px);
+}
+
+/* Contact card */
+#faq .faq-contact-card {
+  min-height: 175px;
+  padding: 25px 27px;
+  border-radius: 12px;
+  background: #0b4d91;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#faq .faq-contact-icon {
+  font-size: 22px;
+  color: #b9dcff;
+  margin-bottom: 8px;
+}
+
+#faq .faq-contact-card h3 {
+  color: #ffffff;
+  font-size: 17px;
+  margin: 0 0 8px;
+}
+
+#faq .faq-contact-card p {
+  color: #d5e6f8;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0 0 13px;
+  max-width: 390px;
+}
+
+#faq .faq-contact-card a {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.55);
+  padding-bottom: 4px;
+}
+
+#faq .faq-contact-card a:hover {
+  color: #b9dcff;
+}
+
+/* Tablet and mobile */
+@media (max-width: 760px) {
+  #faq.faq-section {
+    padding: 65px 6%;
+  }
+
+  #faq .faq-heading {
+    display: block;
+    margin-bottom: 28px;
+  }
+
+  #faq .faq-heading h2 {
+    font-size: 36px;
+  }
+
+  #faq .faq-intro {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+
+  #faq .faq-card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #faq .faq-card {
+    min-height: auto;
+    padding: 22px 19px;
+    gap: 14px;
+  }
+
+  #faq .faq-card h3 {
+    font-size: 14px;
+  }
+
+  #faq .faq-contact-card {
+    min-height: auto;
+    padding: 25px 22px;
+  }
+}
